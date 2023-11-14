@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <link rel="stylesheet" href="./detais.css">
+    <!-- <link rel='stylesheet' id='utmavo-font-css' href='./assets/font/utm_avo' type='text/css' media='all'> -->
+    <link rel='stylesheet' id='utmavo-font-css' href='./assets/css/font_utmavo.css' type='text/css' media='all'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Đồ Án</title>
+    <script src="./javascript.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <p class="welcome-msg">Chào mừng bạn đến với Nội Thất Toàn Cầu - Công ty cổ Phần SIMPLORD</p>
+                </div>
+                <div class="header-right">
+                    <a href="/lien-he" class="contact d-lg-show">
+                        <!-- <i class="fal fa-map-marker-alt"></i> -->
+                        <!-- <svg width="17" class="icon-map" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120" xml:space="preserve"><switch><g>
+                            <path d="m60 120-1.4-1C56.7 117.6 13 86 13 47 13 21.1 34.1 0 60 0s47 21.1 47 47c0 39-43.7 70.6-45.6 72l-1.4 1zM60 5C36.8 5 18 23.8 18 47c0 32.6 34.5 61 42 66.8 7.5-5.8 42-34.2 42-66.8 0-23.2-18.8-42-42-42z"/><path d="M60 74.9c-15.4 0-27.9-12.5-27.9-27.9S44.6 19.1 60 19.1 87.9 31.6 87.9 47 75.4 74.9 60 74.9zM60 24c-12.7 0-23 10.3-23 23s10.3 23 23 23 23-10.3 23-23-10.3-23-23-23z"/></g></switch>
+                        </svg> -->
+                        <img class="icon-map" src="./assets/img/map.svg" width="17" height="">
+                        Hệ thống cửa hàng
+                    </a>
+                    <a href="/lien-he" title="" class="help d-lg-show">
+                        <img class="icon-info" src="./assets/img/information.png" width="17" height="">
+                        Liên hệ
+                    </a>
+                    <a href="/dang-nhap" title="" class="login-linkk d-lg-show">
+                        <i class="icon-user">
+                            <img  src="./assets/img/user.png" width="13" height="14">
+                        </i>
+                        Đăng nhập | Đăng ký
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-content-wrapper" style="height:105px">
+            <div class="header-middle sticky-header sticky-content">
+                <div class="container">
+                    <div class="header-left">
+                        <a href="index.html" class="logo">
+                            <img src="./assets/img/logo-toancau.png" alt="logo-toancau2" width="220" height="33">
+                        </a>
+                        <div class="header-search">
+                            <form action="https://noithattoancau.vn/tim-kiem" class="input-wrapper">
+                                <input type="text" class="input-search" name="key" autocomplete="off"
+                                    placeholder="Tìm kiếm..." required="">
+                                <button class="btn-search" type="submit">
+                                    <img src="./assets/img/search.png" class="icon-search" width="20" height="24">
+                                </button>
+                            </form>
+
+
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <a href="tel:0123456789" class="icon-box">
+                            <div class="icon-box-icon">
+                                <img class="icon-phone" src="./assets/img/telephone.png" alt="">
+                            </div>
+                            <div class="icon-box-content">
+                                <h4 class="icon-box-title">Hotline:</h4>
+                                <p>0123 4567 89</p>
+                            </div>
+                        </a>
+                        <span class="divider"></span>
+                        <a href="wishlist" class="wishlist">
+                            <img class="icon-heart" src="./assets/img/heart.png" alt="">
+                            <span class="wishlist-count">0</span>
+                        </a>
+                        <span class="divider"></span>
+                        <div class="dropdown cart-dropdown">
+                            <a class="cart-toggle">
+                                <div class="cart-lable">
+                                    <span class="cart-name">Giỏ hàng:</span>
+                                    <span class="cart-price">0 ₫ </span>
+                                </div>
+                                <img class="icon-cart" src="./assets/img/shopping-bag.png" alt="">
+                                <span class="cart-count">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-left">
+                    <nav class="main-nav">
+                        <ul class="menu">
+                            <li class="submenu">
+                                <a href="/thietke">Thiết kế nội thất</a>
+                                <!-- <ul>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/thiet-ke/thiet-ke-noi-that-biet-thu">Thiết kế nội thất biệt thự</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/thiet-ke/thiet-ke-noi-that-chung-cu">Thiết kế nội thất chung cư- Nhà
+                                            phố</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/thiet-ke/thiet-ke-noi-that-phong-ngu-dep">Thiết kế phòng ngủ</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/thiet-ke/thiet-ke-noi-that-phong-khach">Thiết kế phòng khách</a>
+                                    </li>
+                                </ul> -->
+                            </li>
+                            <li class="submenu">
+                                <a href="">Nội thất gỗ óc chó</a>
+                                <!-- <ul>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/blog/sofa-go-oc-cho.html">Sofa gỗ óc chó</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/blog/ke-tivi-go-oc-cho.html">Kệ tivi gỗ óc chó</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/blog/ban-tra-go-oc-cho.html">Bàn trà gỗ óc chó</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/blog/ban-an-go-oc-cho-tu-nhien.html">Bàn ghế ăn gỗ óc chó</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/blog/giuong-go-oc-cho.html">Giường ngủ gỗ óc chó</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/blog/ban-trang-diem-go-oc-cho.html">Bàn phấn gỗ óc chó</a>
+                                    </li>
+                                </ul> -->
+                            </li>
+                            <li class="submenu">
+                                <a href="https://noithattoancau.vn/ban-ghe-sofa-go">Sofa gỗ </a>
+                            </li>
+                            <li class="submenu">
+                                <a href="https://noithattoancau.vn/ban-ghe-an">Bàn ghế ăn</a>
+                            </li>
+                            <li class="submenu">
+                                <a href="https://noithattoancau.vn/giuong-ngu">Giường Ngủ</a>
+                            </li>
+                            <li class="submenu">
+                                <a href="">Sản phẩm khác</a>
+                                <!-- <ul>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="https://noithattoancau.vn/ke-tivi-dep">Kệ Tivi</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/ban-tra-ban-nuoc-dep">Bàn trà</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/sofa-da-ni">Sofa da - nỉ</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/tu-bep-dep">Tủ bếp</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/giuong-ngu-cho-tre-em">Giường trẻ em</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/tu-quan-ao">Tủ quần áo</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/ban-phan-trang-diem.html">Bàn trang điểm</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/tu-giay">Tủ giầy</a>
+                                    </li>
+                                    <li style="text-transform: capitalize;">
+                                        <a href="/vach-ngan-phong">Vách ngăn</a>
+                                    </li>
+                                </ul> -->
+                            </li>
+                            <li class="submenu">
+                                <a href="/blog">Tin tức</a>
+                            </li>
+                            <li class="submenu">
+                                <a href="/gioi-thieu">Giới thiệu</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header -->
+
+    <div class="page-wrapper">
+        <main class="main">
+            <div class="">
+                <div class="container">
+                    <div class="product product-single">
+                        <div class="product-left">
+                            <div class="slides-detail default">
+                                <div class="slides-detail__top default">
+                                    <div class="image slick-slide slick-current slick-active" >
+                                        <a href="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-8.jpg">
+                                            <img src="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-8.jpg" alt="san-pham-moi-2021-8">
+                                        </a>
+                                    </div>
+                                    <div class="image slick-slide" style="display: none;">
+                                        <a href="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-7.jpg" >
+                                            <img src="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-7.jpg" alt="san-pham-moi-2021-7">
+                                        </a>
+                                    </div>
+                                    <div class="image slick-slide" style="display: none;">
+                                        <a href="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-5.jpg" >
+                                            <img src="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-5.jpg" alt="san-pham-moi-2021-5">
+                                        </a>
+                                    </div>
+                                    <div class="image slick-slide" style="display: none;">
+                                        <a href="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-4.jpg" >
+                                            <img src="https://resize.sudospaces.com/noithattoancau/2021/07/san-pham-moi-2021-4.jpg" alt="san-pham-moi-2021-4">
+                                        </a>
+                                    </div>           
+                                    <div class="button">
+                                        <a onclick="nextimg(-1)" class="prev">&#10094;</a>
+                                        <a onclick="nextimg(1)" class="next">&#10095;</a>
+                                    </div>
+                                </div>
+                                <div class="slides-detail__bottom default">
+                                    <div class="item">
+                                        <img src="https://resize.sudospaces.com/noithattoancau/2021/07/w300/san-pham-moi-2021-8.jpg"
+                                            alt="san-pham-moi-2021-8">
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://resize.sudospaces.com/noithattoancau/2021/07/w300/san-pham-moi-2021-7.jpg"
+                                            alt="san-pham-moi-2021-7">
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://resize.sudospaces.com/noithattoancau/2021/07/w300/san-pham-moi-2021-5.jpg"
+                                            alt="san-pham-moi-2021-5">
+                                    </div>
+                                    <div class="item">
+                                        <img src="https://resize.sudospaces.com/noithattoancau/2021/07/w300/san-pham-moi-2021-4.jpg"
+                                            alt="san-pham-moi-2021-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-right sticky-sidebar-wrapper">
+                            <nav class="breadcrumb-nav breadcrumb-product hide-mobile">
+                                <ul class="breadcrumb">
+                                    <li><a href="/"><img src="./assets/img/home.png" width="16" height="14" alt=""></a>
+                                    </li>
+                                    <li><a href="https://noithattoancau.vn/ban-ghe-sofa-go" class="active">Bàn
+                                            ghế Sofa gỗ</a></li>
+                                    <li>Mẫu salon cho phòng khách - TC038</li>
+                                </ul>
+                            </nav>
+                            <div class="sticky-sidebar" data-sticky-options="{'minWidth': 767}">
+                                <h1 class="product-name product-namedetail" style="height: auto;">Mẫu salon cho
+                                    phòng khách - TC038</h1>
+                                <div class="product-price">
+                                    <div class="product-meta" style="font-size: 14px;font-weight: normal;">
+                                        Sku: <span class="product-sku">TC038</span> Brand: <span
+                                            class="product-brand">Nội Thất Toàn Cầu</span> </div>
+                                    <span class="price-new">65.000.000 đ</span>
+                                </div>
+                                <div class="product-form product-qty default">
+                                    <div class="product-form-group">
+                                        <div class="input-group mr-2">
+                                            <button class="minus-btn" onclick="handleMinus()">-</button>
+                                            <input id="amount" class="input_qty form-control" type="text" value="1">
+                                            <button class="plus-btn" onclick="handlePlus()">+</button>
+                                        </div>
+                                        <button data-id="546"
+                                            class="buy_now_verzion btn-product btn-cart text-normal ls-normal font-weight-semi-bold">
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                    </div>
+                                    <div class="product-action">
+                                        <a data-id="546" class="btn-product btn-wishlist mr-6">
+                                            <img src="./assets/img/heart.png" width="16" height="16" alt="">
+                                            <span>Thêm vào danh sách yêu
+                                                thích</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+    </div>
+
+    <!-- End main -->
+
+    <footer class="footer">
+        <div class="container" style="display: block;">
+            <div class="footer-top">
+                <div class="row align-item-center">
+                    <div class="col-lg-3">
+                        <a href="index.html" class="logo-footer">
+                            <img class="lazy" src="./assets/img/logo-toancau.png" width="252" height="38" alt="">
+                        </a>
+                        <p class="slogan"
+                            style="font-size: 16px; color: #fff; font-weight: normal; padding-top: 10px; margin: 0; line-height: 20px;">
+                            Nội Thất Toàn Cầu - Chuyên Gia Nội Thất Gỗ Quý
+                        </p>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="widget widget-newsletter">
+                            <div class="newsletter-info">
+                                <h4 class="widget-title">Đăng ký liên hệ</h4>
+                                <p>Chúng tôi sẽ liên hệ lại với bạn ngay.</p>
+                            </div>
+                            <form class="input-wrapper inpput-wrapper-inline">
+                                <input type="number" class="form-control" name="phone" id="email2"
+                                    placeholder="Nhập số điện thoại tại đây...">
+                                <button class="btn btn-primary" type="submit">
+                                    Gọi cho tôi ngay
+                                    <img class="right-arrow" src="./assets/img/right-arrow.png" width="16" height="1.6">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget widget-info">
+                            <h4 class="widget-title">Thông tin liên hệ</h4>
+                            <ul class="widget-body footer-left">
+                                <li>
+                                    <label>HOTLINE: 0939 977 688
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>EMAIL: noithattoancau.vn@gmail.com
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>ADDRESS:
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>* Hà Nội: B04-L22 An Phú shop villa, KĐT Dương Nội, Hà Đông, Hà Nội
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>* HCM: KDC Đại Quang , Lê Hồng Phong , Tân phước , Dĩ an , Bình Dương
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>* Hải Phòng: 31/5 KĐT Waterfront City, Hải Phòng
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>THỜI GIAN LÀM VIỆC:
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>8H00 - 17H00 hàng ngày trừ CN và lễ tết</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget ml-lg-4">
+                            <h4 class="widget-title">Về chúng tôi</h4>
+                            <ul class="widget-body">
+                                <li>
+                                    <a href="/gioi-thieu">Về chúng tôi</a>
+                                </li>
+                                <li>
+                                    <a href="">Lợi nhuận</a>
+                                </li>
+                                <li>
+                                    <a href="">Dịch vụ khách hàng</a>
+                                </li>
+                                <li>
+                                    <a href="">Điều khoản & Thanh toán</a>
+                                </li>
+                                <li>
+                                    <a href="/gio-hang">Xem giỏ hàng</a>
+                                </li>
+                                <li>
+                                    <a href="">Theo dõi đơn hàng</a>
+                                </li>
+                                <li>
+                                    <a href="">Trợ giúp</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget ml-lg-4">
+                            <h4 class="widget-title">Dịch vụ</h4>
+                            <ul class="widget-body">
+                                <li>
+                                    <a href="/thiet-ke/thiet-ke-noi-that-phong-ngu-dep">Thiết kế nội thất phòng ngủ</a>
+                                </li>
+                                <li>
+                                    <a href="/thiet-ke/thiet-ke-noi-that-phong-khach">Thiết kế nội thất phòng khách</a>
+                                </li>
+                                <li>
+                                    <a href="/thiet-ke/thiet-ke-noi-that-chung-cu">Thiết kế nội thất chung cư</a>
+                                </li>
+                                <li>
+                                    <a href="/thiet-ke/thiet-ke-noi-that-biet-thu">Thiết kế nội thất biệt thự</a>
+                                </li>
+                                <li>
+                                    <a href="https://noithattoancau.vn/thiet-ke/phong-ngu-go-oc-cho.html">Phòng ngủ gỗ
+                                        óc chó</a>
+                                </li>
+                                <li>
+                                    <a href="/thiet-ke-phong-khach-cao-cap-bang-go-oc-cho.html">Phòng khách gỗ óc
+                                        chó</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget ml-lg-4">
+                            <h4 class="widget-title">Sản phẩm</h4>
+                            <ul class="widget-body">
+                                <li>
+                                    <a href="/blog/sofa-go-oc-cho.html">Sofa gỗ óc chó</a>
+                                </li>
+                                <li>
+                                    <a href="/blog/ban-ghe-go-go-do.html">Bàn ghế gỗ gõ đỏ</a>
+                                </li>
+                                <li>
+                                    <a href="/blog/ban-ghe-go-gu.html">Bàn ghế gỗ gụ</a>
+                                </li>
+                                <li>
+                                    <a href="/blog/ban-an-go-oc-cho-tu-nhien.html">Bàn ăn gỗ óc chó</a>
+                                </li>
+                                <li>
+                                    <a href="/blog/giuong-go-oc-cho.html">Giường ngủ gỗ óc chó</a>
+                                </li>
+                                <li>
+                                    <a href="/blog/ke-tivi-go-oc-cho.html">Kệ tivi gỗ óc chó</a>
+                                </li>
+                                <li>
+                                    <a href="/blog/ban-tra-go-oc-cho.html">Bàn trà gỗ óc chó</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom"></div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+</body>
+
+</html>

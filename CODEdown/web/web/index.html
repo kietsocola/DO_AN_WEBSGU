@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>Document</title>
+
+        <!-- font -->
+        <link rel="stylesheet" href="./asset/fonts/stylesheet.css" />
+
+        <link rel="stylesheet" href="./asset/styles.css" />
+
+        <link rel="stylesheet" href="./asset/responsive.css" />
+
+        <!-- Scripts -->
+        <!-- <script src="./asset/js/scripts.js"></script> -->
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header__top">
+                    <span class="header__title-mobile">SIMEHOME </span>
+
+                    <span class="header__title"
+                        >Chào mừng bạn đến với Nội Thất Toàn Cầu - Công ty cổ
+                        Phần SIMEHOME</span
+                    >
+                    <div class="header__wrap">
+                        <div class="header__address">
+                            <svg
+                                class="address__img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 384 512"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+                                />
+                            </svg>
+                            <p class="address__log">Hệ thống cửa hàng</p>
+                        </div>
+
+                        <div class="header__contact">
+                            <svg
+                                class="contact__img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 512 512"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                                />
+                            </svg>
+                            <p class="contact__log">Liên hệ</p>
+                        </div>
+
+                        <div class="header__login">
+                            <svg
+                                class="login__img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 448 512"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                                />
+                            </svg>
+                            <p class="login__log">Đăng nhập | Đăng ký</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="fix-header">
+            <nav class="nav-bar">
+                <div class="container">
+                    <div class="nav__inner">
+                        <div class="menu-toggle">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 448 512"
+                                class="toggle-menu__icon"
+                            >
+                                <path
+                                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                                />
+                            </svg>
+                        </div>
+
+                        <!-- tab-item -->
+                        <ul class="nav__menu">
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="1"
+                                    >NỘI THẤT GỖ ÓC CHÓ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="2"
+                                    >THIẾT KẾ NỘI THẤT</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="3"
+                                    >SOFA GỖ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="4"
+                                    >BÀN GHẾ ĂN</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="5"
+                                    >GIƯỜNG NGỦ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="6"
+                                    >SẢN PHẨM KHÁC</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="7"
+                                    >TIN TỨC</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="nav-item__link-mobile tab-item"
+                                    data-tab="8"
+                                    >GIỚI THIỆU</a
+                                >
+                            </li>
+                        </ul>
+
+                        <a href="#!" class="nav__logo">
+                            <img
+                                src="./asset/img/logo-toancau2.png"
+                                alt=""
+                                class="nav-logo__img"
+                            />
+                        </a>
+                        <a href="#!" class="nav__find">
+                            <input
+                                type="text"
+                                class="find__side"
+                                placeholder="Tim kiem ..."
+                            />
+                            <img
+                                src="./asset/img/search-solid.svg"
+                                alt=""
+                                class="find__img"
+                            />
+                        </a>
+
+                        <a href="#!" class="nav__hotline">
+                            <img
+                                src="./asset/img/phone-alt-solid.svg"
+                                alt=""
+                                class="hotline__img"
+                            />
+                            <div class="hotline__text">
+                                <p class="hotline__title">Hotline:</p>
+                                <p class="hotline__number">0939 977 688</p>
+                            </div>
+                        </a>
+
+                        <a href="#!" class="nav__favorite">
+                            <img
+                                src="./asset/img/heart-solid.svg"
+                                alt=""
+                                class="nav-favorite__img"
+                            />
+                            <div class="favorite__nofi">0</div>
+                        </a>
+
+                        <a href="#!" class="nav__buy">
+                            <div class="nav-buy__text">
+                                <p class="nav-buy__title">Giỏ Hàng:</p>
+                                <p class="nav-buy__price">0 ₫</p>
+                            </div>
+                            <img
+                                src="./asset/img/shopping-bag-solid.svg"
+                                alt=""
+                                class="nav-buy__img"
+                            />
+                            <div class="buy__nofi">0</div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="container">
+                <ul class="tab">
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="1"
+                            >NỘI THẤT GỖ ÓC CHÓ</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="2"
+                            >THIẾT KẾ NỘI THẤT</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="3"
+                            >SOFA GỖ</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="4"
+                            >BÀN GHẾ ĂN</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="5"
+                            >GIƯỜNG NGỦ</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="6"
+                            >SẢN PHẨM KHÁC</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="7"
+                            >TIN TỨC</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#!"
+                            class="nav__item nav-item__link tab-item"
+                            data-tab="8"
+                            >GIỚI THIỆU</a
+                        >
+                    </li>
+                </ul>
+                <div class="tab-wrapper">
+                    <div class="landing-page tab-content active" data-tab="1">
+                        <div class="masonry">
+                            <div class="masonry-inner">
+                                <div class="masonry-item tall">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                                <div class="masonry-item big">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                                <div class="masonry-item width">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                                <div class="masonry-item">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                                <div class="masonry-item">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                                <div class="masonry-item">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                                <div class="masonry-item">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="masonry-item__img"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-list">
+                                <div class="service-item">
+                                    <img
+                                        src="./asset/img/truck-fast-solid.svg"
+                                        alt=""
+                                        class="service-item__img"
+                                    />
+                                    <div class="service-item__info">
+                                        <p class="service-item__heading">
+                                            Giao Hàng Miễn Phí
+                                        </p>
+                                        <p class="service-item__desc">
+                                            Đơn hàng từ 500.000đ trở lên
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-item__decor"></div>
+                                <div class="service-item">
+                                    <img
+                                        src="./asset/img/clock-regular.svg"
+                                        alt=""
+                                        class="service-item__img"
+                                    />
+
+                                    <div class="service-item__info">
+                                        <p class="service-item__heading">
+                                            Hỗ Trợ Khánh Hàng 24/7
+                                        </p>
+                                        <p class="service-item__desc">
+                                            Bất cứ khi nào bạn cần
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-item__decor"></div>
+
+                                <div class="service-item">
+                                    <img
+                                        src="./asset/img/address-book-regular.svg"
+                                        alt=""
+                                        class="service-item__img"
+                                    />
+
+                                    <div class="service-item__info">
+                                        <p class="service-item__heading">
+                                            Nhận Thiết Kế Theo Yêu Cầu
+                                        </p>
+                                        <p class="service-item__desc">
+                                            Đáp ứng tốt nhu cầu của quý khách
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-product">
+                            <div class="featured-product__inner">
+                                <h1 class="featured-product__heading">
+                                    SẢN PHẨM NỔI BẬT
+                                </h1>
+                                <ul class="product-list">
+                                    <li class="product-item">
+                                        <div
+                                            class="product-label product-label__new"
+                                        >
+                                            New
+                                        </div>
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <div
+                                            class="product-label product-label__hot"
+                                        >
+                                            Hot
+                                        </div>
+
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <div
+                                            class="product-label product-label__discount-10"
+                                        >
+                                            -10%
+                                        </div>
+
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <div
+                                            class="product-label product-label__discount-5"
+                                        >
+                                            -5%
+                                        </div>
+
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                    <li class="product-item">
+                                        <img
+                                            src="./asset/img/product-01.jpg"
+                                            alt=""
+                                            class="product-img"
+                                        />
+                                        <p class="product-heading">
+                                            Bàn ghế ăn gỗ óc chó tự nhiên tại hà
+                                            nội - TC811
+                                        </p>
+                                        <p class="product-price">
+                                            35.000.000 đ
+                                        </p>
+                                        <div class="product-rate">
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                            <i
+                                                class="fa-regular fa-star product-rate__star"
+                                            ></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product tab-content" data-tab="2">
+                        <ul class="product-list land-list">
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                            <li class="product-item land-item">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="product-img"
+                                />
+                                <p class="product-heading">
+                                    Bàn ghế ăn gỗ óc chó tự nhiên tại hà nội -
+                                    TC811
+                                </p>
+                                <p class="product-price">35.000.000 đ</p>
+                                <div class="product-rate">
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                    <i
+                                        class="fa-regular fa-star product-rate__star"
+                                    ></i>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="listPage">
+                            <li class="active swap-page__btn">1</li>
+                        </ul>
+                    </div>
+
+                    <div class="production tab-content" data-tab="3">
+                        <div class="production-inner">
+                            <div
+                                class="production-item wrap-mobile production-item-moblie__mid"
+                            >
+                                <section class="production-item__content">
+                                    <p
+                                        class="production-item__label text-align__center"
+                                    >
+                                        01. Mục tiêu của chúng tôi là
+                                    </p>
+                                    <h3
+                                        class="production-item__heading text-align__center"
+                                        style="width: 350px"
+                                    >
+                                        KIẾN TẠO SẢN PHẨM TINH HOA
+                                    </h3>
+                                    <p
+                                        class="production-item__desc text-align__center"
+                                        style="width: 280px"
+                                    >
+                                        Giá trị cao từ gỗ quý hiếm, Sáng tạo từ
+                                        nhà thiết kế & Tâm huyết từ người nghệ
+                                        nhân. Từ đó chúng tôi tạo ra sản phẩm
+                                        TINH HOA cho những ngôi nhà ĐẲNG CẤP
+                                    </p>
+                                </section>
+                                <div
+                                    class="production-item__outstanding wrap-mobile"
+                                >
+                                    <section class="production-item__index">
+                                        <h2 class="production-index__heading">
+                                            28+
+                                        </h2>
+                                        <p class="production-index__label">
+                                            Năm Kinh Nghiệm
+                                        </p>
+                                        <p class="production-index__desc">
+                                            Xưởng sản xuất gia truyền đã 28 năm
+                                            tuổi & Kinh nghiệm nghệ nhân sống
+                                            đời với gỗ
+                                        </p>
+                                    </section>
+                                    <section class="production-item__index">
+                                        <h2 class="production-index__heading">
+                                            6+
+                                        </h2>
+                                        <p class="production-index__label">
+                                            Năm chuyên nghiệp
+                                        </p>
+                                        <p class="production-index__desc">
+                                            6 Năm xây dựng bởi thế hệ trẻ có tri
+                                            thức & công nghệ Tạo nên sản phẩm
+                                            dẫn dắt thị trường
+                                        </p>
+                                    </section>
+                                    <section class="production-item__index">
+                                        <h2 class="production-index__heading">
+                                            999+
+                                        </h2>
+                                        <p class="production-index__label">
+                                            Khách hàng
+                                        </p>
+                                        <p class="production-index__desc">
+                                            Góp phần tạo dựng không gian sống ý
+                                            nghĩa & Hạnh phúc cho khách hàng
+                                        </p>
+                                    </section>
+                                </div>
+                            </div>
+
+                            <div class="production-item wrap-mobile">
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="production-item__img center-mobile"
+                                />
+                                <section
+                                    class="production-item__content text-align__center"
+                                >
+                                    <p class="production-item__label">
+                                        02. Tầm nhìn - Sứ mệnh & Giá trị cốt lõi
+                                    </p>
+                                    <h3 class="production-item__heading">
+                                        SỐNG ĐẸP MỖI NGÀY
+                                    </h3>
+                                    <p
+                                        class="production-item__desc"
+                                        style="width: 280px"
+                                    >
+                                        Lấy Khách hàng và Thành viên công ty làm
+                                        trọng tâm. Hướng đến xây dựng cuộc sống
+                                        ý nghĩa , đủ đầy hạnh phúc cho mỗi người
+                                    </p>
+                                    <a href="#!" class="production-item__more"
+                                        >XEM THÊM</a
+                                    >
+                                </section>
+                            </div>
+
+                            <div
+                                class="production-item wrap-mobile center-mobile"
+                            >
+                                <section
+                                    class="production-item__content text-align__center"
+                                >
+                                    <p class="production-item__label">
+                                        03. Hệ thống cửa hàng
+                                    </p>
+                                    <h3 class="production-item__heading">
+                                        Showrooom & Nhà xưởng
+                                    </h3>
+                                    <p
+                                        class="production-item__desc"
+                                        style="width: 280px"
+                                    >
+                                        Hà Nội: Số 9 Ngõ 01 đường Lê Văn Thiêm -
+                                        Quận Thanh Xuân - Hà Nộ HCM: KDC Đại
+                                        Quang , Lê Hồng Phong , Tân phước , Dĩ
+                                        an , Bình Dương Hải Phòng: 31/5 KĐT
+                                        Waterfront City, Hải Phòng
+                                    </p>
+                                    <a href="#!" class="production-item__more"
+                                        >XEM THÊM</a
+                                    >
+                                </section>
+                                <img
+                                    src="./asset/img/product-01.jpg"
+                                    alt=""
+                                    class="production-item__img"
+                                />
+                            </div>
+
+                            <div class="production-item-04">
+                                <section
+                                    class="production-item__content item__content-04"
+                                >
+                                    <p
+                                        class="production-item__label item__label-04 center-mobile"
+                                    >
+                                        04. Đối tác của chúng tôi
+                                    </p>
+                                    <h3
+                                        class="production-item__heading item__heading-04 center-mobile"
+                                    >
+                                        Đồng hành cùng chúng tôi luôn là những
+                                        thương hiệu hàng đầu
+                                    </h3>
+                                </section>
+                                <div class="production-item__list-img">
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="production-item-04__img"
+                                    />
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="production-item-04__img"
+                                    />
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="production-item-04__img"
+                                    />
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="production-item-04__img"
+                                    />
+                                    <img
+                                        src="./asset/img/product-01.jpg"
+                                        alt=""
+                                        class="production-item-04__img"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-4 tab-content" data-tab="4">tab 4</div>
+                    <div class="data-5 tab-content" data-tab="5">tab 5</div>
+                    <div class="data-6 tab-content" data-tab="6">tab 6</div>
+                    <div class="data-7 tab-content" data-tab="7">tab 7</div>
+                    <div class="data-8 tab-content" data-tab="8">tab 8</div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <img
+                            src="./asset/img/logo-toancau2.png"
+                            alt=""
+                            class="footer-logo__img"
+                        />
+                        <h3 class="footer-logo__title">
+                            Nội Thất Toàn Cầu - Chuyên Gia Nội Thất Gỗ Quý
+                        </h3>
+                    </div>
+
+                    <div class="footer-info">
+                        <h3 class="footer-info__heading">Đăng ký liên hệ</h3>
+                        <p class="footer-info__desc">
+                            Chúng tôi sẽ liên hệ lại với bạn ngay.
+                        </p>
+                    </div>
+
+                    <form action="" class="footer-form">
+                        <input
+                            type="text"
+                            placeholder="Nhập số điện thoại ..."
+                            class="footer-form__input"
+                        />
+                        <button type="submit" class="footer-btn__submit">
+                            <p class="footer-submit__desc">Gọi cho tôi ngay</p>
+                            <img
+                                src="./asset/img/arrow-right-solid.svg"
+                                alt=""
+                                class="footer-submit__img"
+                            />
+                        </button>
+                    </form>
+                </div>
+
+                <div class="footer-middle">
+                    <div class="footer-middle__contact">
+                        <h4 class="footer-contact__header">
+                            Thông Tin Liên Hệ
+                        </h4>
+                        <ul class="contact__list">
+                            <li class="contact-item">
+                                <span class="contact-item__label"
+                                    >HOTLINE: 0939 977 688</span
+                                >
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-item__label"
+                                    >EMAIL:noithattoancau.vn@gmail.com</span
+                                >
+                            </li>
+                            <li class="contact-item"><span>ADDRESS:</span></li>
+                            <li class="contact-item">
+                                <span class="contact-item__label"
+                                    >* Hà Nội: B04-L22 An Phú shop villa, KĐT
+                                    Dương Nội, Hà Đông, Hà Nội</span
+                                >
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-item__label"
+                                    >* HCM: KDC Đại Quang , Lê Hồng Phong , Tân
+                                    phước , Dĩ an , Bình Dương</span
+                                >
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-item__label"
+                                    >* Hải Phòng: 31/5 KĐT Waterfront City, Hải
+                                    Phòng</span
+                                >
+                            </li>
+                            <li class="contact-item">
+                                <span>THỜI GIAN LÀM VIỆC:</span>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-item__label"
+                                    >8H00- 17H00 hàng ngày trừ CN và lễ
+                                    tết</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-middle__content">
+                        <p class="footer-middle__header">Về Chúng Tôi</p>
+                        <ul class="footer-middle__list">
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Về chúng tôi</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Lợi nhuận</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Dịch vụ khách hàng</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Điều khoản & Thanh toán</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Xem giỏ hàng</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Theo dõi đơn hàng</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Trợ giúp</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-middle__content">
+                        <p class="footer-middle__header">Dịch Vụ</p>
+                        <ul class="footer-middle__list">
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Thiết kế nội thất phòng ngủ</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Thiết kế nội thất phòng khách</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Thiết kế nội thất chung cư</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Thiết kế nội thất biệt thự</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Phòng ngủ gỗ óc chó</a
+                                >
+                            </li>
+                            <li class="footer-middle__item">
+                                <a href="#!" class="footer-middle__link"
+                                    >Phòng khách gỗ óc chó</a
+                                >
+                            </li>
+                        </ul>
+
+                        <div class="footer-middle__content">
+                            <p class="footer-middle__header">Sản Phẩm</p>
+                            <ul class="footer-middle__list">
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Sofa gỗ óc chó</a
+                                    >
+                                </li>
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Bàn ghế gỗ gõ đỏ</a
+                                    >
+                                </li>
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Bàn ghế gỗ gụ</a
+                                    >
+                                </li>
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Bàn ăn gỗ óc chó</a
+                                    >
+                                </li>
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Giường ngủ gỗ óc chó</a
+                                    >
+                                </li>
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Kệ tivi gỗ óc chó</a
+                                    >
+                                </li>
+                                <li class="footer-middle__item">
+                                    <a href="#!" class="footer-middle__link"
+                                        >Bàn trà gỗ óc chó</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="footer-bottom__left">
+                            <img
+                                src="./asset/img/footer-bottom-01.svg"
+                                alt=""
+                                class="footer-bank__img"
+                            />
+                            <img
+                                src="./asset/img/footer-bottom-02.svg"
+                                alt=""
+                                class="footer-bank__img"
+                            />
+                            <img
+                                src="./asset/img/footer-bottom-03.svg"
+                                alt=""
+                                class="footer-bank__img"
+                            />
+                        </div>
+
+                        <div class="footer-bottom__center">
+                            <p class="footer-bottom__text">
+                                Bản quyền nội dung và hình ảnh thuộc về Nội Thất
+                                Toàn Cầu - Công ty cổ phần SIMEHOME. Mọi sự sao
+                                chép đều phải được sự cho phép bằng văn bản của
+                                chúng tôi.
+                            </p>
+                        </div>
+
+                        <div class="footer-bottom__right">
+                            <a href="#!" class="footer-social__item">
+                                <img
+                                    src="./asset/img/facebook-f.svg"
+                                    alt=""
+                                    class="footer-social__fb-img width-20"
+                                />
+                            </a>
+                            <a href="#!" class="footer-social__item">
+                                <img
+                                    src="./asset/img/youtube.svg"
+                                    alt=""
+                                    class="footer-social__yt-img width-20"
+                                />
+                            </a>
+                            <a href="#!" class="footer-social__item">
+                                <img
+                                    src="./asset/img/linkedin-in.svg"
+                                    alt=""
+                                    class="footer-social__in-img width-20"
+                                />
+                            </a>
+                            <a href="#!" class="footer-social__item">
+                                <img
+                                    src="./asset/img/twitter.svg"
+                                    alt=""
+                                    class="footer-social__tw-img width-20"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./asset/js/scripts.js"></script>
+    </body>
+</html>

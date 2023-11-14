@@ -1,0 +1,144 @@
+
+
+.containerLoveProduct {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  padding: 0.3rem 0 0.3rem;
+  line-height: 1.875;
+}
+
+td {
+  padding: 1.5rem 1rem 1.5rem 0;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.wishlist-table {
+  padding: 5rem;
+  width: 100;
+  width: 100%;
+}
+.wishlist-table thead tr .product-name-LoveProduct {
+  text-transform: uppercase;
+  padding-left: 2px;
+  width: 120px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+}
+.wishlist-table tbody img {
+  width: 100%;
+  height: 90%;
+}
+.wishlist-table tbody .product-price-LoveProduct .amount {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 17px;
+}
+.wishlist-table tbody .product-add-to-cart {
+  text-align: center;
+}
+.wishlist-table tbody .product-add-to-cart button {
+  padding: 15px 0;
+  background: red;
+  border: red;
+  border-radius: 5px;
+}
+.wishlist-table tbody .product-add-to-cart button span {
+  color: white;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.wishlist-table tbody .product-remove a {
+  font-size: larger;
+} /*# sourceMappingURL=loveProduct.css.map */
+
+/* css none theader */
+@media screen and (max-width: 756px) {
+  thead {
+    display: none;
+  }
+}
+
+/* CSS cho hiển thị dọc */
+@media screen and (max-width: 756px) {
+  .wishlist-table tbody {
+    display: block;
+  }
+
+  .wishlist-table {
+    border: 1px solid #e1e1e1;
+    margin: 30px 0;
+    padding: 5px 80px;
+  }
+
+  .wishlist-table tr {
+    display: block;
+    margin-bottom: 10px; /* Khoảng cách giữa các mục trong danh sách dọc */
+  }
+
+  td {
+    display: block;
+    text-align: center; /* Canh trái cho các mục trong danh sách dọc */
+    border: none;
+    padding: 0 0 20px 0;
+  }
+
+  .wishlist-table .product-thumbnail img {
+    width: 28%;
+    height: auto;
+  }
+  .product-thumbnail {
+    padding: 23px 0 0 0;
+  }
+  .product-name-LoveProduct {
+    padding-top: 12px;
+  }
+
+  .wishlist-table .product-name-LoveProduct a {
+    font-size: 15px; /* Điều chỉnh kích thước phông chữ nếu cần */
+  }
+
+  .wishlist-table .product-price-LoveProduct .amount {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 17px;
+  }
+
+  .wishlist-table .product-add-to-cart {
+    text-align: center;
+  }
+
+  .wishlist-table .product-add-to-cart button {
+    padding: 15px 0;
+    background: red;
+    border: red;
+    border-radius: 5px;
+  }
+
+  .wishlist-table .product-add-to-cart button span {
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+
+  .product-remove a {
+    display: none;
+    padding: 0;
+  }
+  .product-remove {
+    padding: 0;
+  }
+}
