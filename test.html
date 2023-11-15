@@ -1,14 +1,41 @@
-nhấn đặt hàng => lấy all sản phẩm trong giỏ => lưu vô cái biến bill {
-                                                                    idHoaDon,
-                                                                    tenDangNhap,
-                                                                    ngayTao,
-                                                                    products: [
-                                                                        {
-                                                                            list products
-                                                                        }
-                                                                    ]
-                                                                }
-muốn đưa data dô products =>  duyệt sản phẩm trong giỏ
-đưa bill lên local
+<tr class="row-product-admin"><td>001</td><td>Bàn xà cừ</td><td><img src="./assets/image/san-pham-moi-2021-5.jpg" width="80" alt="Hình ảnh sản phẩm"></td><td>10000000</td><td>đây là bàn có chất liệu xà cừ rất đẹp</td><td><button class="btn-edit btn-ed" data-id="001" fdprocessedid="vt1kwm"><img src="./assets/icon/pen-to-square-regular (1).svg" width="15px" alt=""> Sửa</button><button class="btn-delete btn-ed" data-id="001" fdprocessedid="7v9vxi"><img src="./assets/icon/trash.png" width="15px" alt=""> Xóa</button></td></tr>
+const idCell = document.createElement('td');
+  idCell.textContent = product.idProduct;
+  row.appendChild(idCell);
 
-view: duyệt bills trên local => tạo div => làm chức năng nhấn vào div thì hiện chi tiết đơn gồm tên sản phẩm...
+  const nameCell = document.createElement('td');
+  nameCell.textContent = product.productName;
+  row.appendChild(nameCell);
+
+  const imageCell = document.createElement('td');
+  const image = document.createElement('img');
+  image.src = product.imageProduct;
+  image.width = 80;
+  image.alt = 'Hình ảnh sản phẩm';
+  imageCell.appendChild(image);
+  row.appendChild(imageCell);
+
+  const priceCell = document.createElement('td');
+  priceCell.textContent = product.priceProduct;
+  row.appendChild(priceCell);
+
+  const detailCell = document.createElement('td');
+  detailCell.textContent = product.detailProduct;
+  row.appendChild(detailCell);
+
+
+
+  var actionsCell = document.createElement('td');
+  var editButton = document.createElement('button');
+  editButton.classList.add('btn-edit', 'btn-ed');
+  editButton.innerHTML = '<img src="./assets/icon/pen-to-square-regular (1).svg" width="15px" alt=""> Sửa';
+  editButton.setAttribute('data-id', product.idProduct);
+  
+  var deleteButton = document.createElement('button');
+  deleteButton.classList.add('btn-delete', 'btn-ed');
+  deleteButton.innerHTML = '<img src="./assets/icon/trash.png" width="15px" alt=""> Xóa';
+  deleteButton.setAttribute('data-id', product.idProduct);
+
+  actionsCell.appendChild(editButton);
+  actionsCell.appendChild(deleteButton);
+  row.appendChild(actionsCell);
