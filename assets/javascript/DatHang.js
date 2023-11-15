@@ -23,6 +23,7 @@ btnDatHang.addEventListener('click', function(){
         }
     }
     
+    //tạo data để úp lên local
     var currentDate = new Date();
     var Bill = {
         idBill: Date.now(),
@@ -35,15 +36,15 @@ btnDatHang.addEventListener('click', function(){
     localStorage.setItem('bills', JSON.stringify(bills));
     
 })
-
+//tạo div để khi nhấn vào show đơn hàng
 var containerDonhang = document.getElementById('donhang')
 for(var i=0; i<bills.length; i++){
     var donHang = document.createElement('div');
     donHang.innerHTML = `
     <div onclick = "showDonHang(this)">
-    <div class="idDonhang" style="display: none;"></div>
-    <a href="#!" class="donhangItem" >
-    </a>
+        <div class="idDonhang" style="display: none;"></div>
+            <a href="#!" class="donhangItem" >
+        </a>
     </div>
     `;
     donHang.querySelector('.donhangItem').textContent = "Đơn hàng "+i;
@@ -54,9 +55,13 @@ for(var i=0; i<bills.length; i++){
 var boxDonHang = document.getElementsByClassName('productBag')[0];
 
 function showDonHang(d){
+    // lấy id của đơn hàng
     var id = d.querySelector('.idDonhang').textContent;
     for(var i=0; i<bills.length; i++){
+        // so sánh đơn hàng
         if(bills[i].idBill == d.querySelector('.idDonhang').textContent){
+
+            // tạo bill để show đơn hàng
             var billHTML = document.createElement('div');
             billHTML.innerHTML=`
             <div class="containerBillProduct" style="position:absolute; top:25%; left: 50%; z-index=1000; width: 200px; height: 250px; background-color: #ccc;">
@@ -68,6 +73,7 @@ function showDonHang(d){
                 </div>
             </div>
             `
+            // thêm id của sản phẩm đầu tiên (cái này cần sửa lại để lặp all sản phẩm)
             billHTML.querySelector('.nameProduct').textContent = bills[i].detailBill[0].idPro
             boxDonHang.appendChild(billHTML);
         }
