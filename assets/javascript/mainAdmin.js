@@ -68,7 +68,7 @@ menuLeft.addEventListener('mouseenter', function (event) {
             console.log("yes2")
 
             if (event.target === menuLeft) {
-                menuLeftFC()
+                // menuLeftFC()
             }
         };
     }
@@ -79,7 +79,7 @@ menuLeft.addEventListener('mouseout', function (event) {
         if (itemTitle[0].style.display === 'block') {
             console.log("yes2")
             if (event.target === menuLeft) {
-                menuLeftFC()
+                // menuLeftFC()
             }
         };
     }

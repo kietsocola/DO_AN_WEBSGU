@@ -53,11 +53,13 @@ function editRow(e) {
     var nameinput = document.getElementById('Add-name_product');
     var price = document.getElementById('Add-price');
     var detail = document.getElementById('Add-detail_Product');
+    var category = document.getElementById('select_category');
     var image = document.getElementById('Add-Image_product');
     // Lắng nghe và gán giá trị cho các trường input
     nameinput.value = updatedProduct.productName;
     price.value = parseInt(updatedProduct.priceProduct);
     detail.value = updatedProduct.detailProduct;
+    category.value = updatedProduct.category;
       
     btnSub.addEventListener('click', function() {
       
@@ -90,19 +92,20 @@ function deleteRow(e){
     
 }
 
-
 // table user
 var users = JSON.parse(localStorage.getItem('users')) || [];
 var bodytableUser = document.getElementsByClassName('bodyTableUser')[0];
 users.forEach(u => {
-    const row = document.createElement('tr');
-    row.classList.add('row-product-admin')
-    row.innerHTML = `<td>` +u.loginName+  `</td>
-    <td>`+ u.userName + `</td>
-    <td>`+ u.address +`</td>
-    <td>`+ u.telephone +`</td>`
-    // 4. Thêm dòng vào bảng
-    bodytableUser.appendChild(row);
+    if(u.isAdmin == 0){
+        const row = document.createElement('tr');
+        row.classList.add('row-product-admin')
+        row.innerHTML = `<td>` +u.loginName+  `</td>
+        <td>`+ u.userName + `</td>
+        <td>`+ u.address +`</td>
+        <td>`+ u.telephone +`</td>`
+        // 4. Thêm dòng vào bảng
+        bodytableUser.appendChild(row);
+    }
 });
 
 // table Đơn hàng
@@ -120,6 +123,7 @@ Orders.forEach(u => {
 });
 
 // ẩn hiện bảng user và product
+let currentPage = 1;
 var table = document.getElementsByClassName('tableProduct')[0];
 var rows = table.getElementsByClassName('bodyTableProduct')[0].getElementsByTagName('tr');
 
@@ -130,22 +134,30 @@ document.getElementById('productTable').addEventListener('click', function(e){
     proTable.style.display = 'block';
     userTable.style.display = 'none';
     orderTable.style.display = 'none';
+    table = document.getElementsByClassName('tableProduct')[0];
+    rows = table.getElementsByClassName('bodyTableProduct')[0].getElementsByTagName('tr');
+    showPage(currentPage);
 })
 document.getElementById('userTable').addEventListener('click', function(e){
     proTable.style.display = 'none';
     orderTable.style.display = 'none';
     userTable.style.display = 'block';
+    table = document.getElementsByClassName('tableUser')[0];
+    rows = table.getElementsByClassName('bodyTableUser')[0].getElementsByTagName('tr');
+    showPage(currentPage);
 })
 document.getElementById('orderTable').addEventListener('click', function(e){
     proTable.style.display = 'none';
     orderTable.style.display = 'block';
     userTable.style.display = 'none';
+    table = document.getElementsByClassName('tableOrder')[0];
+    rows = table.getElementsByClassName('bodyTableOrder')[0].getElementsByTagName('tr');
+    showPage(currentPage);
 })
 
 
 // phân trang 
 var itemsPerPage = document.getElementById('selectNumRow').value; // Số mục trên mỗi trang
-let currentPage = 1;
 
 function showPage(page) {
     
