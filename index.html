@@ -1,206 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nội thất</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/product.css">
-    <link rel="stylesheet" href="./assets/css/details.css">
-    <link rel="stylesheet" href="./assets/css/loveProduct.css">
-    <link rel="stylesheet" href="./assets/css/form-log.css">
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/product.css" />
+    <link rel="stylesheet" href="./assets/css/details.css" />
+    <link rel="stylesheet" href="./assets/css/loveProduct.css" />
+    <link rel="stylesheet" href="./assets/css/form-log.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+    <link rel="stylesheet" href="./assets/css/donHang.css" />
     <!-- <link href="https://fonts.cdnfonts.com/css/utm-avo" rel="stylesheet" /> -->
-</head>
-<body>
+  </head>
+  <body>
     <!-- phần nền đen khi hiện form -->
-    <div id="nen-den" style="display: none; width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.5);"></div>
+    <div
+      id="nen-den"
+      style="
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+      "
+    ></div>
     <!-- login form -->
-    <div class="content-body-login" style="display: none;">
-        <div class="form-wrapper">
-          <form class="bg-white">
-            <h1 class="text-title">Login to your store</h1>
-            <div class="field-group">
-              <label class="label" for="txt-store">Tên đăng nhập</label>
-              <input class="input" type="text" id="login_name" name="store" placeholder="" />
-            </div>
-            <div class="field-group">
-              <label class="label" for="txt-password">Mật khẩu</label>
-              <input class="input" type="password" id="login_password" name="password" placeholder="" />
-            </div>
-  
-            <div class="field-group">
-              <input class="btn-submit-login" type="submit" value="Log In" />
-            </div>
-          </form>
-  
-          <div class="bg-grey">
-            <a href="#register" class="link-register">Sign Up</a>
-            <small class="link-about">What is Shopify? <a href="#about">Find out more</a></small>
+    <div class="content-body-login" style="display: none">
+      <div class="form-wrapper">
+        <form class="bg-white">
+          <h1 class="text-title">Login to your store</h1>
+          <div class="field-group">
+            <label class="label" for="txt-store">Tên đăng nhập</label>
+            <input
+              class="input"
+              type="text"
+              id="login_name"
+              name="store"
+              placeholder=""
+            />
           </div>
+          <div class="field-group">
+            <label class="label" for="txt-password">Mật khẩu</label>
+            <input
+              class="input"
+              type="password"
+              id="login_password"
+              name="password"
+              placeholder=""
+            />
+          </div>
+
+          <div class="field-group">
+            <input class="btn-submit-login" type="submit" value="Log In" />
+          </div>
+        </form>
+
+        <div class="bg-grey">
+          <a href="#register" class="link-register">Sign Up</a>
+          <small class="link-about"
+            >What is Shopify? <a href="#about">Find out more</a></small
+          >
         </div>
+      </div>
     </div>
     <!-- register form -->
-    <div class="content-body-register" style="display: none;">
-        <div class="form-wrapper">
-          <form class="bg-white">
-            <h1 class="text-title">Register to your store</h1>
-            <div class="field-group">
-              <label class="label" for="txt-store">Tên đăng nhập</label>
-              <input class="input" type="text" id="register_name" name="store" placeholder="" />
-              <span id="span_for_nameLogin"></span>
-            </div>
-            <div class="field-group">
-              <label class="label" for="txt-password">Mật khẩu</label>
-              <input class="input" type="password" id="register_password" name="password" placeholder="" />
-              <span id="span_for_passWord"></span>
-            </div>
-            <div class="field-group">
-                <label class="label" for="txt-store">Tên người dùng</label>
-                <input class="input" type="text" id="user_name" name="store" placeholder="" />
-                <span id="span_for_userName"></span>
-            </div>  
-            <div class="field-group">
-                <label class="label" for="txt-store">Số điện thoại</label>
-                <input class="input" type="text" id="phoneUser" name="store" placeholder="" />
-                <span id="span_for_phoneUser"></span>
-            </div> 
-            <div class="field-group">
-                <label class="label" for="txt-store">Địa chỉ</label>
-                <input class="input" type="text" id="addressUser" name="store" placeholder="" />
-                <span id="span_for_addressUser"></span>
-            </div> 
-            <div class="field-group">
-              <input class="btn-submit-register" type="submit" value="Register" />
-            </div>
-          </form>
-        </div>
+    <div class="content-body-register" style="display: none">
+      <div class="form-wrapper">
+        <form class="bg-white">
+          <h1 class="text-title">Register to your store</h1>
+          <div class="field-group">
+            <label class="label" for="txt-store">Tên đăng nhập</label>
+            <input
+              class="input"
+              type="text"
+              id="register_name"
+              name="store"
+              placeholder=""
+            />
+            <span id="span_for_nameLogin"></span>
+          </div>
+          <div class="field-group">
+            <label class="label" for="txt-password">Mật khẩu</label>
+            <input
+              class="input"
+              type="password"
+              id="register_password"
+              name="password"
+              placeholder=""
+            />
+            <span id="span_for_passWord"></span>
+          </div>
+          <div class="field-group">
+            <label class="label" for="txt-store">Tên người dùng</label>
+            <input
+              class="input"
+              type="text"
+              id="user_name"
+              name="store"
+              placeholder=""
+            />
+            <span id="span_for_userName"></span>
+          </div>
+          <div class="field-group">
+            <label class="label" for="txt-store">Số điện thoại</label>
+            <input
+              class="input"
+              type="text"
+              id="phoneUser"
+              name="store"
+              placeholder=""
+            />
+            <span id="span_for_phoneUser"></span>
+          </div>
+          <div class="field-group">
+            <label class="label" for="txt-store">Địa chỉ</label>
+            <input
+              class="input"
+              type="text"
+              id="addressUser"
+              name="store"
+              placeholder=""
+            />
+            <span id="span_for_addressUser"></span>
+          </div>
+          <div class="field-group">
+            <input class="btn-submit-register" type="submit" value="Register" />
+          </div>
+        </form>
+      </div>
     </div>
-    <header class="header" >
-        <div class="header-top">
-            <div class="container">
-                <div class="header-left">
-                    <p class="welcome-msg">Chào mừng bạn đến với nội thất Tuấn Kiệt-Công ty cổ phần TKT</p>
-                </div>
-                <div class="header-right">
-                    <img src="./assets/icon/place-localizer.png" alt="" class="icon-header">
-                    <a href="#!" class="contact hover-orange">Hệ thống cửa hàng</a>
-                    <img src="./assets/icon/information.png" alt="" class="icon-header">
-                    <a href="#!" class="contact hover-orange">Liên hệ</a>
-                    <img src="./assets/icon/user.png" alt="" id="DivBeforeLoginName" class="icon-header"> 
-                    <a href="#!" id="UserNameHeader" class="contact login-link hover-orange" style="margin-right: 0 !important;">Đăng nhập</a>
-                    <img src="./assets/icon/arrow-right-from-bracket-solid.svg" style="margin-left: 12px;" alt="" id="iconLogout" class="icon-header">
-                    <a href="#!" id="btnLogOut" class="contact hover-orange">Logout</a>
-                </div>
-            </div>
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-left">
+            <p class="welcome-msg">
+              Chào mừng bạn đến với nội thất Tuấn Kiệt-Công ty cổ phần TKT
+            </p>
+          </div>
+          <div class="header-right">
+            <img
+              src="./assets/icon/place-localizer.png"
+              alt=""
+              class="icon-header"
+            />
+            <a href="#!" class="contact hover-orange">Hệ thống cửa hàng</a>
+            <img
+              src="./assets/icon/information.png"
+              alt=""
+              class="icon-header"
+            />
+            <a href="#!" class="contact hover-orange">Liên hệ</a>
+            <img
+              src="./assets/icon/user.png"
+              alt=""
+              id="DivBeforeLoginName"
+              class="icon-header"
+            />
+            <a
+              href="#!"
+              id="UserNameHeader"
+              class="contact login-link hover-orange"
+              style="margin-right: 0 !important"
+              >Đăng nhập</a
+            >
+            <img
+              src="./assets/icon/arrow-right-from-bracket-solid.svg"
+              style="margin-left: 12px"
+              alt=""
+              id="iconLogout"
+              class="icon-header"
+            />
+            <a href="#!" id="btnLogOut" class="contact hover-orange">Logout</a>
+          </div>
         </div>
-        <!--End header top-->
-        <div class="header-middle">
-            <div class="container-header-middle">
-                <div class="header-middle-left">
-                    <a href="./index.html" class="logo">
-                        <img src="./assets/image/logo-toancau2.png" width="224"  alt="">
-                    </a>
-                    <input type="text" class="searching" autocomplete="off" placeholder="Tìm kiếm...">
-                    <a href="#!" class="a-search">
-                        <img src="./assets/icon/search-interface-symbol.png" height="20px" alt="" class="icon-search">
-                    </a>
-                </div>
-                <div class="header-middle-right">
-                    <a href="#!" class="item-header-right hover-orange">
-                        <div class="icon-box" style="margin-right: 5px !important;">
-                            <img src="./assets/icon/telephone.png" height="28px" alt="" class="icon-header-middle">
-                        </div>
-                        &nbsp;
-                        &nbsp;
-                        <div class="icon-box-content">
-                            <p class="icon-box-header">Hotline</p>
-                            <p class="phone-number">0976077913</p>
-                        </div>
-                    </a>
-                    <span class="divider"></span>
-                    <a id="love-product" href="#" class="item-header-right hover-orange">
-                        <div class="icon-box">
-                            <img src="./assets/icon/heart.png" height="28px" alt="" class="icon-header-middle">
-                        </div>
-                    </a>
-                    <span class="divider"></span>
-                    <a href="#" id="gio-hang" class="item-header-right hover-orange">
-                        <div class="icon-box-content khong-xuong-dong">
-                            <p class="icon-box-header">Giỏ hàng</p>
-                            <p class="phone-number">0đ</p>
-                        </div>
-                        &nbsp;
-                        &nbsp;
-                        <div class="icon-box">
-                            <img src="./assets/icon/shopping-bag.png" height="28px" alt="" class="icon-header-middle">
-                        </div>
-                    </a>
-                </div>
-            </div>
+      </div>
+      <!--End header top-->
+      <div class="header-middle">
+        <div class="container-header-middle">
+          <div class="header-middle-left">
+            <a href="./index.html" class="logo">
+              <img src="./assets/image/logo-toancau2.png" width="224" alt="" />
+            </a>
+            <input
+              type="text"
+              class="searching"
+              autocomplete="off"
+              placeholder="Tìm kiếm..."
+            />
+            <a href="#!" class="a-search">
+              <img
+                src="./assets/icon/search-interface-symbol.png"
+                height="20px"
+                alt=""
+                class="icon-search"
+              />
+            </a>
+          </div>
+          <div class="header-middle-right">
+            <a href="#!" class="item-header-right hover-orange">
+              <div class="icon-box" style="margin-right: 5px !important">
+                <img
+                  src="./assets/icon/telephone.png"
+                  height="28px"
+                  alt=""
+                  class="icon-header-middle"
+                />
+              </div>
+              &nbsp; &nbsp;
+              <div class="icon-box-content">
+                <p class="icon-box-header">Hotline</p>
+                <p class="phone-number">0976077913</p>
+              </div>
+            </a>
+            <span class="divider"></span>
+            <a
+              id="love-product"
+              href="#"
+              class="item-header-right hover-orange"
+            >
+              <div class="icon-box">
+                <img
+                  src="./assets/icon/heart.png"
+                  height="28px"
+                  alt=""
+                  class="icon-header-middle"
+                />
+              </div>
+            </a>
+            <span class="divider"></span>
+            <a href="#" id="gio-hang" class="item-header-right hover-orange">
+              <div class="icon-box-content khong-xuong-dong">
+                <p class="icon-box-header">Giỏ hàng</p>
+                <p class="phone-number">0đ</p>
+              </div>
+              &nbsp; &nbsp;
+              <div class="icon-box">
+                <img
+                  src="./assets/icon/shopping-bag.png"
+                  height="28px"
+                  alt=""
+                  class="icon-header-middle"
+                />
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="header-bottom">
-            <div class="container-header-bottom">
-                <nav class="main-nav">
-                    <ul class="menu">
-                        <li class="category_menu" id="phong_khach">PHÒNG KHÁCH</li>
-                        <li class="category_menu" id="phong_ngu">PHÒNG NGỦ</li>
-                        <li class="category_menu" id="phong_an">PHÒNG ĂN VÀ BẾP</li>
-                        <li class="category_menu" id="phong_tam">PHÒNG TẮM</li>
-                        <li class="category_menu" id="phong_lamviec">PHÒNG LÀM VIỆC</li>
-                        <li class="category_menu" id="gioi_thieu">GIỚI THIỆU</li>
-                        <li class="category_menu" id="lien_he">LIÊN HỆ</li>
-                    </ul>
-                </nav>
-            </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container-header-bottom">
+          <nav class="main-nav">
+            <ul class="menu">
+              <li class="category_menu" id="phong_khach">PHÒNG KHÁCH</li>
+              <li class="category_menu" id="phong_ngu">PHÒNG NGỦ</li>
+              <li class="category_menu" id="phong_an">PHÒNG ĂN VÀ BẾP</li>
+              <li class="category_menu" id="phong_tam">PHÒNG TẮM</li>
+              <li class="category_menu" id="phong_lamviec">PHÒNG LÀM VIỆC</li>
+              <li class="category_menu" id="gioi_thieu">GIỚI THIỆU</li>
+              <li class="category_menu" id="lien_he">LIÊN HỆ</li>
+            </ul>
+          </nav>
         </div>
+      </div>
     </header>
     <div id="page-wrapper">
-        <div id="container-main">
-            <div class="top-body">
-            <h1 class="page-title">
-                Bàn ghế Sofa gỗ
-            </h1>
+      <div id="container-main">
+        <div class="top-body">
+          <h1 class="page-title">Bàn ghế Sofa gỗ</h1>
+        </div>
+        <div class="page-content">
+          <div class="container-page-content">
+            <div class="toolbox-container">
+              <div class="toolbox">
+                <div class="toolbox-left">
+                  <a href="#!" class="filter">
+                    <img
+                      src="./assets/icon/sliders-solid.svg"
+                      width="16px"
+                      style="transform: translateY(14%)"
+                      alt=""
+                    />
+                    BỘ LỌC
+                  </a>
+                  <label for="">Giá từ</label>
+                  <select name="" id="priceStart">
+                    <option value="0">Chọn giá</option>
+                    <option value="5000000">5 triệu</option>
+                    <option value="10000000">10 triệu</option>
+                    <option value="30000000">30 triệu</option>
+                  </select>
+                  <label for="">đến</label>
+                  <select name="" id="priceEnd">
+                    <option value="99999999999999">Chọn giá</option>
+                    <option value="10000000">10 triệu</option>
+                    <option value="30000000">30 triệu</option>
+                    <option value="100000000">100 triệu</option>
+                  </select>
+                  <!-- <input type="text" id="filter_by_name"> -->
+                </div>
+                <div class="toolbox-right">
+                  <div class="toolbox-right-item">
+                    <label
+                      style="
+                        font-size: 14px;
+                        font-weight: 600;
+                        font-style: italic;
+                      "
+                      >SẮP XẾP:
+                    </label>
+                    &nbsp;
+                    <select name="sort_product" class="select-filter">
+                      <option value="">Bán chạy nhất</option>
+                      <option value="">Giá từ thấp đến cao</option>
+                      <option value="">Giá từ cao đến thấp</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="page-content">
-                <div class="container-page-content">
-                    <div class="toolbox-container">
-                        <div class="toolbox">
-                            <div class="toolbox-left">
-                                <a href="#!" class="filter">
-                                    <img src="./assets/icon/sliders-solid.svg" width="16px" style="transform: translateY(14%);" alt="">  BỘ LỌC
-                                </a>
-                                <label for="">Giá từ</label>
-                                <select name="" id="priceStart">
-                                    <option value="0">Chọn giá</option>
-                                    <option value="5000000">5 triệu</option>
-                                    <option value="10000000">10 triệu</option>
-                                    <option value="30000000">30 triệu</option>
-                                </select>
-                                <label for="">đến</label>
-                                <select name="" id="priceEnd">
-                                    <option value="99999999999999">Chọn giá</option>
-                                    <option value="10000000">10 triệu</option>
-                                    <option value="30000000">30 triệu</option>
-                                    <option value="100000000">100 triệu</option>
-                                </select>
-                                <!-- <input type="text" id="filter_by_name"> -->
-                            </div>
-                            <div class="toolbox-right">
-                                <div class="toolbox-right-item">
-                                    <label style="font-size: 14px; font-weight: 600; font-style: italic;">SẮP XẾP: </label>
-                                    &nbsp;
-                                    <select name="sort_product" class="select-filter">
-                                        <option value="">Bán chạy nhất</option>
-                                        <option value="">Giá từ thấp đến cao</option>
-                                        <option value="">Giá từ cao đến thấp</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contaner-product">
-                        <!-- <div class="box-product">
+            <div class="contaner-product">
+              <!-- <div class="box-product">
                             <a href="#!" class="product">
                                 <img src="./assets/image/san-pham-moi-2021-5.jpg" alt="">
                                 <a href="" class="add-bag">
@@ -217,88 +335,86 @@
                                 </div>
                             </a>
                         </div> -->
-                        
-                    </div>
-                    <ul class="listPage">
-                        <li class="active">1</li>
-                    </ul>
-                </div>
-                <!-- <div class="box-button-xemthem">
+            </div>
+            <ul class="listPage">
+              <li class="active">1</li>
+            </ul>
+          </div>
+          <!-- <div class="box-button-xemthem">
                     <button class="view-more">
                         Xem thêm sản phẩm
                     </button>
                 </div> -->
-            </div>
         </div>
-        <!-- love product -->
-        <div class="containerLoveProduct" style="display: none;">
-            <table class="wishlist-table">
-              <thead>
-                <tr>
-                  <th class="product-name-LoveProduct"><span>Sản phẩm</span></th>
-                  <th></th>
-                  <th class="product-name-LoveProduct"><span>Giá</span></th>
-                  <th class="product-add-to-cart"></th>
-                  <th class="product-remove"></th>
-                </tr>
-              </thead>
-              <tbody class="wishlist-items-wrapper">
-                <tr id="table-product">
-                  <td class="product-thumbnail">
-                    <a href="#">
-                      <figure>
-                        <img
-                          src="./assets/image/san-pham-moi-2021-5.jpg"
-                          alt="Bộ bàn ghế phòng khách bằng gỗ - TC146"
-                        />
-                      </figure>
-                    </a>
-                  </td>
-                  <td class="product-name-LoveProduct">
-                    <a href="#">Bộ bàn ghế phòng khách bằng gỗ - TC146</a>
-                  </td>
-                  <td class="product-price-LoveProduct">
-                    <span class="amount">72.000.000 đ</span>
-                  </td>
-                  <td class="product-add-to-cart">
-                    <button>
-                      <a class="buy_now btn-product btn-primary"
-                        ><span>Thêm vào giỏ hàng</span></a
-                      >
-                    </button>
-                  </td>
-                  <td class="product-remove">
-                    <div>
-                      <a class="remove-wishlist remove" title="Xóa">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="1em"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-                
-              </tbody>
-            </table>
-        </div>
-        <!-- Bag -->
-        <div id = "containerBag" style="display: none;">
+      </div>
+      <!-- love product -->
+      <div class="containerLoveProduct" style="display: none">
+        <table class="wishlist-table">
+          <thead>
+            <tr>
+              <th class="product-name-LoveProduct"><span>Sản phẩm</span></th>
+              <th></th>
+              <th class="product-name-LoveProduct"><span>Giá</span></th>
+              <th class="product-add-to-cart"></th>
+              <th class="product-remove"></th>
+            </tr>
+          </thead>
+          <tbody class="wishlist-items-wrapper">
+            <tr id="table-product">
+              <td class="product-thumbnail">
+                <a href="#">
+                  <figure>
+                    <img
+                      src="./assets/image/san-pham-moi-2021-5.jpg"
+                      alt="Bộ bàn ghế phòng khách bằng gỗ - TC146"
+                    />
+                  </figure>
+                </a>
+              </td>
+              <td class="product-name-LoveProduct">
+                <a href="#">Bộ bàn ghế phòng khách bằng gỗ - TC146</a>
+              </td>
+              <td class="product-price-LoveProduct">
+                <span class="amount">72.000.000 đ</span>
+              </td>
+              <td class="product-add-to-cart">
+                <button>
+                  <a class="buy_now btn-product btn-primary"
+                    ><span>Thêm vào giỏ hàng</span></a
+                  >
+                </button>
+              </td>
+              <td class="product-remove">
+                <div>
+                  <a class="remove-wishlist remove" title="Xóa">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="1em"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Bag -->
+      <div id="containerBag" style="display: none">
         <div class="shopBag">
-        <div class="containerBag">
-        <div class="header_bag">
-            <div class="title_bag">
-            <h3>Giỏ hàng của bạn (1)</h3>
-            <button>Sửa</button>
+          <div class="containerBag">
+            <div class="header_bag">
+              <div class="title_bag">
+                <h3>Giỏ hàng của bạn (1)</h3>
+                <button>Sửa</button>
+              </div>
             </div>
-        </div>
-        <div class="productBag">
-            <div class="yr_bag">
+            <div class="productBag">
+              <div class="yr_bag">
                 <!-- <div class="show_product">
                     <div class="chat_with">
                     <svg
@@ -461,143 +577,228 @@
                     </svg>
                     </div>
                 </div> -->
-            </div>
-            <div class="yr_total">
-            <div class="yr_endow">
-                <div class="icon_discountShop">
-                <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    class="d7ed-SwZDZ2"
-                >
-                    <g fill="none" fill-rule="nonzero">
-                    <path fill="#CFD2D4" d="M14 6h7v12h-7z"></path>
-                    <path
-                        d="M21 4a2 2 0 0 1 2 2v3.112l-.5.289A2.998 2.998 0 0 0 21 12c0 1.084.579 2.066 1.5 2.6l.5.288V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3.112l.5-.289A2.998 2.998 0 0 0 3 12a2.998 2.998 0 0 0-1.5-2.6L1 9.113V6a2 2 0 0 1 2-2h18Zm0 2-6-.001a1 1 0 0 1-.883.994L14 7a1 1 0 0 1-1-1.001L3 6v2c1.241.93 2 2.4 2 4s-.759 3.07-2 4v2l10-.001a1 1 0 0 1 1.993-.116L15 18 21 18v-2c-1.241-.93-2-2.4-2-4s.759-3.07 2-4V6Zm-7 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"
-                        fill="#6F787E"
-                    ></path>
-                    </g>
-                </svg>
-                <span>Mã ưa đãi Shop</span>
+              </div>
+              <div class="yr_total">
+                <div class="yr_endow">
+                  <div class="icon_discountShop">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      class="d7ed-SwZDZ2"
+                    >
+                      <g fill="none" fill-rule="nonzero">
+                        <path fill="#CFD2D4" d="M14 6h7v12h-7z"></path>
+                        <path
+                          d="M21 4a2 2 0 0 1 2 2v3.112l-.5.289A2.998 2.998 0 0 0 21 12c0 1.084.579 2.066 1.5 2.6l.5.288V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3.112l.5-.289A2.998 2.998 0 0 0 3 12a2.998 2.998 0 0 0-1.5-2.6L1 9.113V6a2 2 0 0 1 2-2h18Zm0 2-6-.001a1 1 0 0 1-.883.994L14 7a1 1 0 0 1-1-1.001L3 6v2c1.241.93 2 2.4 2 4s-.759 3.07-2 4v2l10-.001a1 1 0 0 1 1.993-.116L15 18 21 18v-2c-1.241-.93-2-2.4-2-4s.759-3.07 2-4V6Zm-7 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"
+                          fill="#6F787E"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span>Mã ưa đãi Shop</span>
+                  </div>
+                  <span class="code">Chọn/nhập mã</span>
                 </div>
-                <span class="code">Chọn/nhập mã</span>
-            </div>
-            <hr />
-            <div class="yr_bill">
-                <div class="total_bill">
+                <hr />
+                <div class="yr_bill">
+                  <div class="total_bill">
                     <span>Tạm tính:</span>
-                    <span class="money">0đ</span>
-                </div>
-                <div class="bnt_total">
+                    <span id="money">0đ</span>
+                  </div>
+                  <div class="bnt_total">
                     <button id="btn_datHang">Đặt hàng</button>
+                  </div>
                 </div>
-            </div>
-            <div class="yr_bill">
-                <div class="total_bill">
+                <div class="yr_bill">
+                  <div class="total_bill">
                     <span>Xem đơn hàng</span>
-                </div>
-                <div id="donhang">
+                  </div>
+                  <div id="donhang">
                     <!-- <a href="#!" class="donhangItem">Đơn hàng 1</a>
                     </br>
-                    <a href="#!">Đơn hàng 2</a> -->
+                    <a href="#!">Đơn hàng 2</a>  -->
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
+      </div>
     </div>
     <footer class="footer">
-        <div class="container-footer">
-            <div class="footer-top">
-                <div class="item-footer-top">
-                    <div class="logo-text-footer">
-                        <a href="#!" class="logo-footer">
-                            <img src="./assets/image/logo-toancau2.png" width="260"  alt="">
-                        </a>
-                        <p class="slogan">
-                            Nội Thất Tuấn Kiệt - Chuyên Gia Nội Thất Gỗ Quý
-                        </p>
-                    </div>
-                    <div class="contact-footer-top">
-                        <div class="container-footer-top-right">
-                            <div class="contact-footer-top-left">
-                                <h4 class="title-footer" style="font-size: 20px;">Đăng ký liên hệ</h4>
-                                <p class="text-mini-footer">Chúng tôi sẽ liên hệ với bạn ngay</p>
-                            </div>
-                            <form action="" class="form-footer-top">
-                                <input type="number" name="phone-number" placeholder="Nhập số điện thoại tại đây" class="intput-footer-top">
-                                <button class="call-me" type="submit">GỌI CHO TÔI NGAY &nbsp; -></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-footer">
+        <div class="footer-top">
+          <div class="item-footer-top">
+            <div class="logo-text-footer">
+              <a href="#!" class="logo-footer">
+                <img
+                  src="./assets/image/logo-toancau2.png"
+                  width="260"
+                  alt=""
+                />
+              </a>
+              <p class="slogan">
+                Nội Thất Tuấn Kiệt - Chuyên Gia Nội Thất Gỗ Quý
+              </p>
             </div>
-            <div class="footer-bottom">
-                <div class="row-footer-bottom">
-                    <div class="col-footer-bottom">
-                        <div class="infor-bottom">
-                            <h4 class="info-bottom-title">Thông Tin Liên Hệ</h4>
-                            <ul class="list-footer-bottom">
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Hotline: 0976 077 913</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Email: noithat@gmail.com</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Address:</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">*Phan Văn Trị, phường 12, Q.Gò Vấp</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">*An Dương Vương, phường 4, Q.5</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Thời gian làm việc:</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">8h - 17h hằng ngày trừ Chủ Nhật</li> </a>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-footer-bottom">
-                        <div class="infor-bottom">
-                            <h4 class="info-bottom-title">Về Chúng Tôi</h4>
-                            <ul class="list-footer-bottom">
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Về chúng tôi</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Lợi nhuận</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Dịch vụ khách hàng</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Điều khoản & thanh toán</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Xem giỏ hàng</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Theo dõi đơn hàng</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Trợ giúp</li> </a>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-footer-bottom">
-                        <div class="infor-bottom">
-                            <h4 class="info-bottom-title">Dịch Vụ</h4>
-                            <ul class="list-footer-bottom">
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Thiết kế nội thất phòng ngủ</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Thiết kế nội thất phòng khách</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Thiết kế nội thất chung cư</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Thiết kế nội thất biệt thự</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Phòng ngủ gỗ óc chó</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Phòng khách gỗ óc chó</li> </a>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-footer-bottom">
-                        <div class="infor-bottom">
-                            <h4 class="info-bottom-title">Sản Phẩm</h4>
-                            <ul class="list-footer-bottom">
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Sofa gỗ óc chó</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Bàn ghế gỗ gõ đỏ</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Bàn ghế gỗ gụ</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Bàn ăn gỗ óc chó</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Giường ngủ gỗ óc chó</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Kệ tivi gỗ óc chó</li> </a>
-                                <a href="#!" class="a-of-li"><li class="item-footer-bottom">Bàn trà gỗ óc chó</li> </a>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="contact-footer-top">
+              <div class="container-footer-top-right">
+                <div class="contact-footer-top-left">
+                  <h4 class="title-footer" style="font-size: 20px">
+                    Đăng ký liên hệ
+                  </h4>
+                  <p class="text-mini-footer">
+                    Chúng tôi sẽ liên hệ với bạn ngay
+                  </p>
                 </div>
+                <form action="" class="form-footer-top">
+                  <input
+                    type="number"
+                    name="phone-number"
+                    placeholder="Nhập số điện thoại tại đây"
+                    class="intput-footer-top"
+                  />
+                  <button class="call-me" type="submit">
+                    GỌI CHO TÔI NGAY &nbsp; ->
+                  </button>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <div class="row-footer-bottom">
+            <div class="col-footer-bottom">
+              <div class="infor-bottom">
+                <h4 class="info-bottom-title">Thông Tin Liên Hệ</h4>
+                <ul class="list-footer-bottom">
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Hotline: 0976 077 913</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      Email: noithat@gmail.com
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Address:</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      *Phan Văn Trị, phường 12, Q.Gò Vấp
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      *An Dương Vương, phường 4, Q.5
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Thời gian làm việc:</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      8h - 17h hằng ngày trừ Chủ Nhật
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <div class="col-footer-bottom">
+              <div class="infor-bottom">
+                <h4 class="info-bottom-title">Về Chúng Tôi</h4>
+                <ul class="list-footer-bottom">
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Về chúng tôi</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Lợi nhuận</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Dịch vụ khách hàng</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Điều khoản & thanh toán</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Xem giỏ hàng</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Theo dõi đơn hàng</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Trợ giúp</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <div class="col-footer-bottom">
+              <div class="infor-bottom">
+                <h4 class="info-bottom-title">Dịch Vụ</h4>
+                <ul class="list-footer-bottom">
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      Thiết kế nội thất phòng ngủ
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      Thiết kế nội thất phòng khách
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      Thiết kế nội thất chung cư
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">
+                      Thiết kế nội thất biệt thự
+                    </li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Phòng ngủ gỗ óc chó</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Phòng khách gỗ óc chó</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <div class="col-footer-bottom">
+              <div class="infor-bottom">
+                <h4 class="info-bottom-title">Sản Phẩm</h4>
+                <ul class="list-footer-bottom">
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Sofa gỗ óc chó</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Bàn ghế gỗ gõ đỏ</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Bàn ghế gỗ gụ</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Bàn ăn gỗ óc chó</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Giường ngủ gỗ óc chó</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Kệ tivi gỗ óc chó</li>
+                  </a>
+                  <a href="#!" class="a-of-li"
+                    ><li class="item-footer-bottom">Bàn trà gỗ óc chó</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="./assets/javascript/createUser.js"></script>
     <script src="./assets/javascript/createProductUsers.js"></script>
@@ -609,5 +810,5 @@
     <script src="./assets/javascript/CRUDWithUser.js"></script>
     <script src="./assets/javascript/phantrang.js"></script>
     <script src="./assets/javascript/DatHang.js"></script>
-</body>
+  </body>
 </html>
