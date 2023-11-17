@@ -4,10 +4,8 @@
   box-sizing: border-box;
 }
 
-.containerBag {
+.container {
   max-width: 1205px;
-  padding-bottom: 70px;
-  margin: 0 auto;
 }
 
 body {
@@ -224,10 +222,23 @@ body .shopBag .yr_total .yr_bill .total_bill .money {
   color: black;
 }
 body .shopBag .yr_total .yr_bill .bnt_total button {
-  padding: 13px 104px;
+  padding: 14px;
   background: #ee2624;
   border: #ee2624;
-} /*# sourceMappingURL=product.css.map */
+  width: 100%;
+  cursor: pointer;
+  font-size: 17px;
+  color: white;
+}
+
+@media only screen and (max-width: 765px) {
+  .yr_product {
+    flex-wrap: wrap;
+  }
+  .decideBag {
+    margin-left: 311px;
+  }
+}
 
 @media screen and (max-width: 870px) {
   body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {

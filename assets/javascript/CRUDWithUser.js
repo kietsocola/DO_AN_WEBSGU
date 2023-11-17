@@ -1,16 +1,16 @@
-var login = JSON.parse(localStorage.getItem('login'));
-var users = JSON.parse(localStorage.getItem('users'));
-if(login.isLogin == 1){
-    users.forEach(u => {
-        //load bag of user
-        if(u.loginName == login.nameLogin){
-            var containProductShow = document.getElementsByClassName('yr_bag')[0];
-            var productFromBag = u.userBag;
-            productFromBag.forEach(p => {
-                var newBag = document.createElement('div');
-                newBag.className = 'newdivOfBagProduct';
-                // Add the HTML content to the new div
-                newBag.innerHTML = `
+var login = JSON.parse(localStorage.getItem("login"));
+var users = JSON.parse(localStorage.getItem("users"));
+if (login.isLogin == 1) {
+  users.forEach((u) => {
+    //load bag of user
+    if (u.loginName == login.nameLogin) {
+      var containProductShow = document.getElementsByClassName("yr_bag")[0];
+      var productFromBag = u.userBag;
+      productFromBag.forEach((p) => {
+        var newBag = document.createElement("div");
+        newBag.className = "newdivOfBagProduct";
+        // Add the HTML content to the new div
+        newBag.innerHTML = `
                 <div class="show_product">
                             <div class="idProInBag" style="display: none;"></div>
                             <div class="chat_with">
@@ -182,33 +182,34 @@ if(login.isLogin == 1){
                         </div>
                         <br/>
                 `;
-                var idPro = p.idProduct
-                const products = JSON.parse(localStorage.getItem('products')) || [];
-                products.forEach(ps => {
-                    if(ps.idProduct == idPro){
-                        newBag.querySelector('.idProInBag').textContent = idPro;
-                        newBag.querySelector(".a_name_product").textContent = ps.productName;
-                        newBag.querySelector(".p_price_product").textContent = ps.priceProduct;
-                        newBag.querySelector(".quality_input").value = p.quality;
-                        newBag.querySelector('.imgPro').src = ps.imageProduct;
-                    }
-                })
-                
-                containProductShow.appendChild(newBag)
+        var idPro = p.idProduct;
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        products.forEach((ps) => {
+          if (ps.idProduct == idPro) {
+            newBag.querySelector(".idProInBag").textContent = idPro;
+            newBag.querySelector(".a_name_product").textContent =
+              ps.productName;
+            newBag.querySelector(".p_price_product").textContent =
+              ps.priceProduct;
+            newBag.querySelector(".quality_input").value = p.quality;
+            newBag.querySelector(".imgPro").src = ps.imageProduct;
+          }
+        });
 
-                var deleteBag = newBag.querySelector('.icon_trash')
+        containProductShow.appendChild(newBag);
 
-                // click vào nút xóa sản phẩm ở giỏ hàng
-                deleteBag.addEventListener('click', function(e){
-                    var id = newBag.querySelector('.idProInBag').textContent;
-                    users.forEach(function(user) {
-                        user.userBag = user.userBag.filter(item => item.idProduct != id);
-                    })
-                    localStorage.setItem('users', JSON.stringify(users));
-                    newBag.style.display = 'none'
-                })
-                
-            })
-        }
-    });
+        var deleteBag = newBag.querySelector(".icon_trash");
+
+        // click vào nút xóa sản phẩm ở giỏ hàng
+        deleteBag.addEventListener("click", function (e) {
+          var id = newBag.querySelector(".idProInBag").textContent;
+          users.forEach(function (user) {
+            user.userBag = user.userBag.filter((item) => item.idProduct != id);
+          });
+          localStorage.setItem("users", JSON.stringify(users));
+          newBag.style.display = "none";
+        });
+      });
+    }
+  });
 }
