@@ -15,23 +15,22 @@ if (login.isLogin == 1) {
   }
 
   btnDatHang.addEventListener("click", function () {
-    alert('sc')
+    alert('sc');
     var productsInBag = document.getElementsByClassName("show_product");
     var productsInBill = [];
-    for (var i = 0; i < productsInBag.length; i++) {
-      var idPro = productsInBag[i].querySelector(".idProInBag").textContent;
-      var qualityProduct =
-        productsInBag[i].querySelector(".quality_input").value;
-      for (var j = 0; j < productFromLocal.length; j++) {
-        if (productFromLocal[j].idProduct == idPro) {
-          var detail = {
-            idPro: productFromLocal[j].idProduct,
-            pricePro: productFromLocal[j].priceProduct,
-            qualityPro: qualityProduct,
-          };
-          productsInBill.push(detail);
+    for(var i=0; i<productsInBag.length; i++){
+        var idPro = productsInBag[i].querySelector('.idProInBag').textContent;
+        var qualityProduct = productsInBag[i].querySelector('.quality_input').value;
+        for(var j=0; j<productFromLocal.length; j++){
+            if(productFromLocal[j].idProduct == idPro){
+                var detail = {
+                    idPro: productFromLocal[j].idProduct,
+                    pricePro: productFromLocal[j].priceProduct,
+                    qualityPro: qualityProduct
+                }
+                productsInBill.push(detail);
+            }
         }
-      }
     }
 
     //tạo data để úp lên local
