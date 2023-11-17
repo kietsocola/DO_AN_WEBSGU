@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .containerBillProduct {
+    padding: 15px;
+    position: absolute;
+    top: 35%;
+    left: 23%;
+    z-index: 1;
+    width: 708px;
+    background-color: white;
+    height: auto;
+    object-position: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .containerBillProduct header {
+    background-color: rgb(108, 134, 114);
+    color: white;
+  }
+  
+  .containerBillProduct h2,
+  .containerBillProduct h3,
+  .dateP {
+    text-align: center;
+  }
+  
+  .dateP {
+    margin-right: 41px;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .custom-table th {
+    background-color: rgb(108, 134, 114);
+  }
+  .btnClose {
+    margin-right: -3px;
+    margin-top: -5px;
+    float: right;
+    padding-right: 24px;
+    padding: 8px 11px;
+    padding-top: 9px;
+    background: red;
+    border: 1px #ae0001 solid;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: #ae0001 0px 1px 4px, #9f0100 0px 0px 0px 3px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .custom-table {
+      display: block;
+    }
+  
+    .custom-table th,
+    .custom-table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .custom-table tbody {
+      display: block;
+    }
+  
+    .custom-table tbody tr {
+      margin-bottom: 10px;
+    }
+  }
