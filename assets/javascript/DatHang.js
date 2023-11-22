@@ -9,41 +9,60 @@ if (login.isLogin === 1) {
 
   window.addEventListener("load", displayOrdersFromLocalStorage);
 
-  btnDatHang.addEventListener("click", function () {
-    var currentDate = new Date();
-    var productsInBill = Array.from(
-      document.getElementsByClassName("show_product")
-    ).map((productInBag) => {
-      var idPro = productInBag.querySelector(".idProInBag").textContent;
-      var qualityProduct = productInBag.querySelector(".quality_input").value;
+  document.getElementById("myCheckbox").onclick = function (e) {
+    if (this.checked) {
+      btnDatHang.addEventListener("click", function () {
+        var currentDate = new Date();
+        var productsInBill = [];
 
-      var product = productFromLocal.find((p) => p.idProduct === idPro);
+        // Iterate over checked checkboxes
+        var checkedCheckboxes = document.querySelectorAll(
+          '.show_product input[type="checkbox"]:checked'
+        );
+        checkedCheckboxes.forEach(function (checkbox) {
+          var productInBag = checkbox.closest(".show_product");
+          var idPro = productInBag.querySelector(".idProInBag").textContent;
+          var qualityProduct =
+            productInBag.querySelector(".quality_input").value;
 
-      return {
-        idPro: product.idProduct,
-        productName: product.productName,
-        picture: product.imageProduct,
-        category: product.category,
-        pricePro: product.priceProduct,
-        qualityPro: qualityProduct,
-        date: currentDate.toLocaleDateString(),
-      };
-    });
+          var product = productFromLocal.find((p) => p.idProduct === idPro);
 
-    var newBill = {
-      idBill: Date.now(),
-      user: login.nameLogin,
-      checkByAdmin: 0,
-      date: currentDate.toLocaleDateString(),
-      detailBill: productsInBill,
-      address: u.address,
-      sdt: u.telephone,
-    };
+          var productData = {
+            idPro: product.idProduct,
+            productName: product.productName,
+            picture: product.imageProduct,
+            category: product.category,
+            pricePro: product.priceProduct,
+            qualityPro: qualityProduct,
+            date: currentDate.toLocaleDateString(),
+          };
 
-    bills.push(newBill);
-    localStorage.setItem("bills", JSON.stringify(bills));
-    updateUIWithNewOrder(newBill);
-  });
+          productsInBill.push(productData);
+        });
+
+        if (productsInBill.length > 0) {
+          var newBill = {
+            idBill: Date.now(),
+            user: login.nameLogin,
+            checkByAdmin: 0,
+            date: currentDate.toLocaleDateString(),
+            detailBill: productsInBill,
+            address: u.address,
+            sdt: u.telephone,
+          };
+
+          bills.push(newBill);
+          localStorage.setItem("bills", JSON.stringify(bills));
+          updateUIWithNewOrder(newBill);
+        } else {
+          alert("Please select at least one product to create a bill.");
+        }
+      });
+    } else {
+      // Remove the event listener for "DatHang" button
+      btnDatHang.removeEventListener("click");
+    }
+  };
 
   function updateTotalAmount() {
     var totalAmount = bills.reduce((total, bill) => {
@@ -84,7 +103,7 @@ if (login.isLogin === 1) {
       donHang.innerHTML = `
         <div>
           <div class="idDonhang" style="display: none;">${bill.idBill}</div>
-          <a href="#!" class="donhangItem" style="color:red" onclick="showDonHang(this)">Đơn hàng ${
+          <a href="#!" class="donhangItem"  onclick="showDonHang(this)">Đơn hàng ${
             containerDonhang.children.length + 1
           }</a>
         </div>
