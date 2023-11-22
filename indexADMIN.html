@@ -35,7 +35,7 @@
                         <span class="item-title">Thanh toán</span>
                     </a>
                 </li>
-                <li class="item" id="tkTable">
+                <li class="item" id="statisTable">
                     <a href="#!">
                         <svg width="20px" class="icon-menuLeft" viewBox="0 0 511 511">
                             <path d="m415.5,32h-80.001c-0.089,0-0.174,0.01-0.262,0.013-7.204-9.708-18.747-16.013-31.737-16.013h-20.68c-5.521-9.749-15.921-16-27.32-16s-21.799,6.251-27.32,16h-20.68c-12.99,0-24.533,6.305-31.736,16.013-0.089-0.003-0.175-0.013-0.264-0.013h-80c-21.78,0-39.5,17.72-39.5,39.5v400c0,21.78 17.72,39.5 39.5,39.5h320c21.78,0 39.5-17.72 39.5-39.5v-400c0-21.78-17.72-39.5-39.5-39.5zm-232.5,23.5c0-13.509 10.991-24.5 24.5-24.5h25.47c3.174,0 6.004-1.998 7.067-4.988 2.341-6.587 8.555-11.012 15.463-11.012s13.122,4.425 15.463,11.012c1.063,2.99 3.893,4.988 7.067,4.988h25.47c13.509,0 24.5,10.991 24.5,24.5v24.5h-145v-24.5zm257,416c0,13.509-10.991,24.5-24.5,24.5h-320c-13.509,0-24.5-10.991-24.5-24.5v-400c0-13.509 10.991-24.5 24.5-24.5h73.431c-0.603,2.74-0.931,5.582-0.931,8.5v32c0,4.142 3.358,7.5 7.5,7.5h160c4.142,0 7.5-3.358 7.5-7.5v-32c0-2.918-0.328-5.76-0.931-8.5h73.431c13.509,0 24.5,10.991 24.5,24.5v400z"/>
@@ -139,6 +139,7 @@
                             <th>Hình ảnh</th>
                             <th>Giá</th>
                             <th>Mô tả</th>
+                            <th></th>
                         </tr>
                         <tbody class="bodyTableProduct">
     
@@ -164,7 +165,7 @@
                     <table class="tableOrder" >
                         <tr>
                             <th>ID</th>
-                            <th>Tên người đặt</th>
+                            <th>Khách hàng</th>
                             <th>Ngày đặt</th>
                             <th>Duyệt đơn</th>
                         </tr>
@@ -174,7 +175,7 @@
                     </table>
                 </div>
 
-                <div id="contain_tableTK" style="display: none">
+                <div id="contain_tableStatis" style="display: none">
                     <div class="filters">
                         <label for="startDate">Từ ngày:</label>
                         <input type="date" id="startDate">
@@ -193,7 +194,7 @@
                         <button id="filterButton">Thống kê</button>
                     </div>
 
-                    <table class="tableTK">
+                    <table class="tableStatis">
                         <tr>
                             <th>Tên sản phẩm</th>
                             <th>Hình ảnh</th>
@@ -201,10 +202,9 @@
                             <th>Số lượng</th>
                             <th>Giá</th>
                         </tr>
-                        <tbody id="bodyTableTK" class="bodyTableTK"> </tbody>
+                        <tbody id="bodyTableStatis" class="bodyTableStatis"> </tbody>
                     </table>
                 </div>
-
                 <ul class="listPage">
                     <!-- <li class="active">1</li> -->
                 </ul>
@@ -239,7 +239,7 @@
                         <textarea id="Add-detail_Product" ></textarea>
                     </div>
                     <div class="row-card">
-                        <label for="">Hình ảnh</label>
+                        <label for="">Chọn ảnh mới</label>
                         <br>
                         <input type="file" id="fileInput" accept="image/*"> 
                     </div>
