@@ -5,95 +5,105 @@ var users = JSON.parse(localStorage.getItem("users"));
 var bills = JSON.parse(localStorage.getItem("bills")) || [];
 
 if (login.isLogin == 1) {
-  var u;
-  for (varr = i = 0; i < users.length; i++) {
-    if (login.nameLogin == users[i].loginName) {
-      u = users[i];
-      console.log(u);
-      break;
-    }
-  }
-
-  btnDatHang.addEventListener("click", function () {
-    var productsInBag = document.getElementsByClassName("show_product");
-    var productsInBill = [];
-    for (var i = 0; i < productsInBag.length; i++) {
-      var idPro = productsInBag[i].querySelector(".idProInBag").textContent;
-      var qualityProduct =
-        productsInBag[i].querySelector(".quality_input").value;
-      for (var j = 0; j < productFromLocal.length; j++) {
-        if (productFromLocal[j].idProduct == idPro) {
-          var detail = {
-            idPro: productFromLocal[j].idProduct,
-            pricePro: productFromLocal[j].priceProduct,
-            qualityPro: qualityProduct,
-          };
-          productsInBill.push(detail);
+    var u;
+    for (varr = i = 0; i < users.length; i++) {
+        if (login.nameLogin == users[i].loginName) {
+            u = users[i];
+            console.log(u);
+            break;
         }
-      }
     }
 
-    //tạo data để úp lên local
-    var currentDate = new Date();
-    var Bill = {
-      idBill: Date.now(),
-      user: login.nameLogin,
-      checkByAdmin: 0,
-      date: currentDate.toLocaleDateString(),
-      detailBill: productsInBill,
-      address: u.address,
-      sdt: u.telephone,
-    };
-    bills.push(Bill);
-    localStorage.setItem("bills", JSON.stringify(bills));
-  });
+    btnDatHang.addEventListener("click", function () {
+        alert('sc');
+        var productsInBag = document.getElementsByClassName("show_product");
+        var productsInBill = [];
+        for (var i = 0; i < productsInBag.length; i++) {
+            var idPro = productsInBag[i].querySelector('.idProInBag').textContent;
+            var quantityProduct = productsInBag[i].querySelector('.quality_input').value;
+            var currentDate = new Date();
+            // Hàm chuyển đổi ngày thành định dạng "yyyy-mm-dd"
+            function formatDate(date) {
+                return date.toISOString().split('T')[0];
+            }
+            
+            for (var j = 0; j < productFromLocal.length; j++) {
+                if (productFromLocal[j].idProduct == idPro) {
+                    var detail = {
+                        idPro: productFromLocal[j].idProduct,
+                        productName: productFromLocal[j].productName,
+                        picture: productFromLocal[j].imageProduct,
+                        category: productFromLocal[j].category,
+                        pricePro: productFromLocal[j].priceProduct,
+                        quantityPro: quantityProduct,
+                        dateSold: formatDate(currentDate)
+                    }
+                    productsInBill.push(detail);
+                }
+            }
+        }
 
-  function updateTotalAmount() {
-    // Move totalAmount declaration outside the loop
-    var totalAmount = 0;
+        //tạo data để úp lên local
+
+        var Bill = {
+            idBill: Date.now(),
+            user: login.nameLogin,
+            checkByAdmin: 0,
+            date: currentDate.toLocaleDateString(),
+            detailBill: productsInBill,
+            address: u.address,
+            sdt: u.telephone,
+        };
+        bills.push(Bill);
+        localStorage.setItem("bills", JSON.stringify(bills));
+    });
+
+    function updateTotalAmount() {
+        // Move totalAmount declaration outside the loop
+        var totalAmount = 0;
+
+        for (var i = 0; i < bills.length; i++) {
+            // Tính tổng tiền (đã giả sử bạn đã có biến totalAmount)
+            totalAmount += bills[i].detailBill.reduce((total, product) => {
+                return total + product.quantityPro * product.pricePro;
+            }, 0);
+        }
+
+        // Cập nhật nội dung của phần tử có id là 'money'
+        var moneyElement = document.getElementById("money");
+        moneyElement.textContent = totalAmount + "đ";
+    }
+
+    // Gọi hàm để cập nhật tổng tiền khi cần thiết
+    updateTotalAmount();
+
+    var containerDonhang = document.getElementById("donhang");
+    var donHangCounter = 1; // Biến tăng giá trị duy nhất
 
     for (var i = 0; i < bills.length; i++) {
-      // Tính tổng tiền (đã giả sử bạn đã có biến totalAmount)
-      totalAmount += bills[i].detailBill.reduce((total, product) => {
-        return total + product.qualityPro * product.pricePro;
-      }, 0);
-    }
-
-    // Cập nhật nội dung của phần tử có id là 'money'
-    var moneyElement = document.getElementById("money");
-    moneyElement.textContent = totalAmount + "đ";
-  }
-
-  // Gọi hàm để cập nhật tổng tiền khi cần thiết
-  updateTotalAmount();
-
-  var containerDonhang = document.getElementById("donhang");
-  var donHangCounter = 1; // Biến tăng giá trị duy nhất
-
-  for (var i = 0; i < bills.length; i++) {
-    var donHang = document.createElement("div");
-    donHang.innerHTML = `
+        var donHang = document.createElement("div");
+        donHang.innerHTML = `
     <div>
       <div class="idDonhang" style="display: none;"></div>
       <a href="#!" class="donhangItem" style="color:red" onclick="showDonHang(this)">Đơn hàng ${donHangCounter++}</a>
     </div>
   `;
-    donHang.querySelector(".idDonhang").textContent = bills[i].idBill;
-    containerDonhang.appendChild(donHang);
-  }
+        donHang.querySelector(".idDonhang").textContent = bills[i].idBill;
+        containerDonhang.appendChild(donHang);
+    }
 
-  var boxDonHang = document.getElementsByClassName("productBag")[0];
+    var boxDonHang = document.getElementsByClassName("productBag")[0];
 
-  function showDonHang(clickedElement) {
-    // Lấy id của đơn hàng từ phần tử được click
-    var id = clickedElement.parentNode.querySelector(".idDonhang").textContent;
-    for (var i = 0; i < bills.length; i++) {
-      // So sánh id đơn hàng
-      if (bills[i].idBill == id) {
-        // Tạo bill để show đơn hàng
-        var billHTML = document.createElement("div");
-        billHTML.classList.add("containerBillProduct"); // Thêm class cho styling
-        billHTML.innerHTML = `
+    function showDonHang(clickedElement) {
+        // Lấy id của đơn hàng từ phần tử được click
+        var id = clickedElement.parentNode.querySelector(".idDonhang").textContent;
+        for (var i = 0; i < bills.length; i++) {
+            // So sánh id đơn hàng
+            if (bills[i].idBill == id) {
+                // Tạo bill để show đơn hàng
+                var billHTML = document.createElement("div");
+                billHTML.classList.add("containerBillProduct"); // Thêm class cho styling
+                billHTML.innerHTML = `
         <div>
         <button class="btnClose" onclick="closeContainer(this)">X</button>
           <header>
@@ -119,38 +129,38 @@ if (login.isLogin == 1) {
         </div>
       `;
 
-        var tbody = billHTML.querySelector("tbody");
+                var tbody = billHTML.querySelector("tbody");
 
-        // Thêm thông tin sản phẩm vào bảng trong form
-        for (var j = 0; j < bills[i].detailBill.length; j++) {
-          var productRow = document.createElement("tr");
-          productRow.innerHTML = `
+                // Thêm thông tin sản phẩm vào bảng trong form
+                for (var j = 0; j < bills[i].detailBill.length; j++) {
+                    var productRow = document.createElement("tr");
+                    productRow.innerHTML = `
               <td>${bills[i].detailBill[j].idPro}</td>
-              <td>${bills[i].detailBill[j].qualityPro}</td>
+              <td>${bills[i].detailBill[j].quantityPro}</td>
               <td>${bills[i].detailBill[j].pricePro}</td>
             `;
-          tbody.appendChild(productRow);
+                    tbody.appendChild(productRow);
+                }
+
+                // Tính tổng tiền và hiển thị
+                var totalAmount = bills[i].detailBill.reduce((total, product) => {
+                    return total + product.quantityPro * product.pricePro;
+                }, 0);
+
+                var totalAmountElement = billHTML.querySelector("#totalAmount");
+                totalAmountElement.textContent = totalAmount;
+                boxDonHang.appendChild(billHTML);
+                break;
+            }
         }
-
-        // Tính tổng tiền và hiển thị
-        var totalAmount = bills[i].detailBill.reduce((total, product) => {
-          return total + product.qualityPro * product.pricePro;
-        }, 0);
-
-        var totalAmountElement = billHTML.querySelector("#totalAmount");
-        totalAmountElement.textContent = totalAmount;
-        boxDonHang.appendChild(billHTML);
-        break;
-      }
     }
-  }
 
-  // Hàm ẩn đi containerBillProduct khi bấm vào btn X
-  function closeContainer(clickedElement) {
-    // Lấy phần tử .containerBillProduct chứa nút đóng X được click
-    var containerBillProduct = clickedElement.closest(".containerBillProduct");
-    if (containerBillProduct) {
-      containerBillProduct.style.display = "none";
+    // Hàm ẩn đi containerBillProduct khi bấm vào btn X
+    function closeContainer(clickedElement) {
+        // Lấy phần tử .containerBillProduct chứa nút đóng X được click
+        var containerBillProduct = clickedElement.closest(".containerBillProduct");
+        if (containerBillProduct) {
+            containerBillProduct.style.display = "none";
+        }
     }
-  }
 }
