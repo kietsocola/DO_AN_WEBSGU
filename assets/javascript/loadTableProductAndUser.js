@@ -122,23 +122,6 @@ Orders.forEach(u => {
     bodytableOrder.appendChild(row);
 });
 
-// table thống kê
-var TK = JSON.parse(localStorage.getItem('bills')) || [];
-var bodytableTK = document.getElementsByClassName('bodyTableTK')[0];
-TK.forEach(order => {
-    order.detailBill.forEach(product => {
-        const row = document.createElement('tr');
-        row.classList.add('row-product-admin');
-        row.innerHTML = `<td>${product.productName}</td>
-        <td><img src="${product.picture}" width="80" alt="Hình ảnh sản phẩm"></td>
-        <td>${order.date}</td>
-        <td>${product.quantityPro}</td>
-        <td>${product.pricePro}</td>`;
-        // Thêm dòng vào bảng
-        bodytableTK.appendChild(row);
-    });
-});
-
 // ẩn hiện bảng user và product
 let currentPage = 1;
 var table = document.getElementsByClassName('tableProduct')[0];
