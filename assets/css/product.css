@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 1205px;
+#containerBag {
+  padding: 20px;
 }
 
 body {
@@ -29,6 +29,9 @@ body .shopBag .header_bag .title_bag button {
 }
 body .shopBag .productBag {
   display: flex;
+}
+body .shopBag .productBag .yr_bag {
+  width: 70%;
 }
 body .shopBag .productBag .show_product {
   background-color: white;

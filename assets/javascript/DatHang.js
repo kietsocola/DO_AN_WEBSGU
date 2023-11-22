@@ -101,6 +101,7 @@ if (login.isLogin === 1) {
 
     var billHTML = document.createElement("div");
     billHTML.classList.add("containerBillProduct");
+
     billHTML.innerHTML = `
       <div>
         <button class="btnClose" onclick="closeContainer(this)">X</button>
@@ -126,6 +127,9 @@ if (login.isLogin === 1) {
         <p>Tổng tiền: <span id="totalAmount">0</span></p>
       </div>
     `;
+    var nenDen = document.getElementById("nen-den");
+    nenDen.style =
+      "display: block; z-index: 0; position: fixed; width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.5);";
 
     var tbody = billHTML.querySelector("tbody");
 
@@ -151,6 +155,7 @@ if (login.isLogin === 1) {
     var containerBillProduct = clickedElement.closest(".containerBillProduct");
     if (containerBillProduct) {
       containerBillProduct.style.display = "none";
+      nenDen.style = "display: block;";
     }
   }
 }
