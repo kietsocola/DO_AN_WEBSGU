@@ -21,8 +21,8 @@ function displayProducts() {
 
     // Lấy dữ liệu từ localStorage
     var Statistique = JSON.parse(localStorage.getItem('bills')) || [];
-    var bodyTableTK = document.getElementById("bodyTableTK");
-    bodyTableTK.innerHTML = "";
+    var bodyTableStatis = document.getElementById("bodyTableStatis");
+    bodyTableStatis.innerHTML = "";
 
     // Sử dụng đối tượng để theo dõi thông tin của từng sản phẩm
     const productTotals = {};
@@ -66,6 +66,6 @@ function displayProducts() {
             <td>${formatDate(new Date(product.latestDateSold))}</td>
             <td>${product.quantity}</td>
             <td>${product.totalPrice}</td>`;
-        bodyTableTK.appendChild(row);
+        bodyTableStatis.appendChild(row);
     });
 }
