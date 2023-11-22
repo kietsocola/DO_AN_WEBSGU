@@ -69,6 +69,41 @@ body {
   border-radius: 3px;
   cursor: pointer;
   box-shadow: #ae0001 0px 1px 4px, #9f0100 0px 0px 0px 3px;
+  z-index: 100;
+}
+
+.total_bill span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.donhangItem {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.donhangItem:hover {
+  background-color: #e0e0e0;
+  color: red;
+}
+.donhangItem::after {
+  content: " »";
+  color: red;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.donhangItem:hover::after {
+  color: blue; /* Change the color on hover if needed */
 }
 
 @media screen and (max-width: 600px) {

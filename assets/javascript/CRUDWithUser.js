@@ -83,41 +83,9 @@ if (login.isLogin == 1) {
                             </div>
                             <div class="decideBag">
                                 <div class="quantity_product">
-                                <button class="btn_dec">
-                                    <svg
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    version="1.1"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    class="d7ed-SwZDZ2 d7ed-w34diS"
-                                    >
-                                    <path
-                                        fill="#6F787E"
-                                        fill-rule="nonzero"
-                                        d="M22 11v2H2v-2z"
-                                    ></path>
-                                    </svg>
-                                </button>
+                                
                                 <input class="quality_input" type="text" value="1" />
-                                <button class="btn_inc">
-                                    <svg
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    version="1.1"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    class="d7ed-SwZDZ2 d7ed-w34diS"
-                                    >
-                                    <path
-                                        fill="#6F787E"
-                                        fill-rule="nonzero"
-                                        d="M13 11h9v2h-9v9h-2v-9H2v-2h9V2h2z"
-                                    ></path>
-                                    </svg>
-                                </button>
+                                
                                 </div>
                                 <div class="icon_bag">
                                 <div class="icon_heart">
@@ -182,36 +150,7 @@ if (login.isLogin == 1) {
                         </div>
                         <br/>
                 `;
-        newBag.querySelector(".btn_dec").addEventListener("click", function () {
-          // Get the quantity input element
-          var quantityInput = newBag.querySelector(".quality_input");
 
-          // Get the current quantity value
-          var currentQuantity = parseInt(quantityInput.value, 10);
-
-          // Decrease the quantity if it's greater than 1
-          if (currentQuantity > 1) {
-            quantityInput.value = currentQuantity - 1;
-
-            // Update other logic as needed (e.g., update the total price)
-            updateTotalPrice(newBag);
-          }
-        });
-
-        // Event listener for increasing quantity
-        newBag.querySelector(".btn_inc").addEventListener("click", function () {
-          // Get the quantity input element
-          var quantityInput = newBag.querySelector(".quality_input");
-
-          // Get the current quantity value
-          var currentQuantity = parseInt(quantityInput.value, 10);
-
-          // Increase the quantity
-          quantityInput.value = currentQuantity + 1;
-
-          // Update other logic as needed (e.g., update the total price)
-          updateTotalPrice(newBag);
-        });
         var idPro = p.idProduct;
         const products = JSON.parse(localStorage.getItem("products")) || [];
         products.forEach((ps) => {
