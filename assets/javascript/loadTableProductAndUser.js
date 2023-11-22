@@ -36,7 +36,7 @@ function editRow(e) {
     btnSub.textContent = 'Update';
 
     //save image to base64
-    var imageBase64;
+    var imageBase64 = updatedProduct.imageProduct;
       fileInput.addEventListener("change", function (event) {
           var selectedFile = event.target.files[0];
           if (selectedFile) {
@@ -130,12 +130,13 @@ var rows = table.getElementsByClassName('bodyTableProduct')[0].getElementsByTagN
 var proTable = document.getElementById('contain_tableProduct');
 var userTable = document.getElementById('contain_tableUser');
 var orderTable = document.getElementById('contain_tableOrder');
-var tkTable = document.getElementById('contain_tableTK');
+var statisTable = document.getElementById('contain_tableStatis');
+
 document.getElementById('productTable').addEventListener('click', function(e){ 
     proTable.style.display = 'block';
     userTable.style.display = 'none';
     orderTable.style.display = 'none';
-    tkTable.style.display = 'none';
+    statisTable.style.display = 'none';
     table = document.getElementsByClassName('tableProduct')[0];
     rows = table.getElementsByClassName('bodyTableProduct')[0].getElementsByTagName('tr');
     showPage(currentPage);
@@ -144,7 +145,7 @@ document.getElementById('userTable').addEventListener('click', function(e){
     proTable.style.display = 'none';
     orderTable.style.display = 'none';
     userTable.style.display = 'block';
-    tkTable.style.display = 'none';
+    statisTable.style.display = 'none';
     table = document.getElementsByClassName('tableUser')[0];
     rows = table.getElementsByClassName('bodyTableUser')[0].getElementsByTagName('tr');
     showPage(currentPage);
@@ -153,19 +154,19 @@ document.getElementById('orderTable').addEventListener('click', function(e){
     proTable.style.display = 'none';
     orderTable.style.display = 'block';
     userTable.style.display = 'none';
-    tkTable.style.display = 'none';
+    statisTable.style.display = 'none';
     table = document.getElementsByClassName('tableOrder')[0];
     rows = table.getElementsByClassName('bodyTableOrder')[0].getElementsByTagName('tr');
     showPage(currentPage);
 })
-document.getElementById('tkTable').addEventListener('click', function(e){
 
+document.getElementById('statisTable').addEventListener('click', function(e){
     proTable.style.display = 'none';
     orderTable.style.display = 'none';
     userTable.style.display = 'none';
-    tkTable.style.display = 'block';
-    table = document.getElementsByClassName('tableTK')[0];
-    rows = table.getElementsByClassName('bodyTableTK')[0].getElementsByTagName('tr');
+    statisTable.style.display = 'block';
+    table = document.getElementsByClassName('tableStatis')[0];
+    rows = table.getElementsByClassName('bodyTableStatis')[0].getElementsByTagName('tr');
     showPage(currentPage);
 })
 
