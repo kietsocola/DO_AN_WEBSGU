@@ -180,7 +180,7 @@ input:focus{
     width: 100%;
     border-collapse: collapse;
 }
-.tableUser, .tableOrder, .tableTK{
+.tableUser, .tableOrder, .tableStatis{
     width: 100%;
     border-collapse: collapse;
 }
