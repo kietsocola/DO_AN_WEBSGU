@@ -4,163 +4,180 @@ var login = JSON.parse(localStorage.getItem("login"));
 var users = JSON.parse(localStorage.getItem("users"));
 var bills = JSON.parse(localStorage.getItem("bills")) || [];
 
-if (login.isLogin == 1) {
-    var u;
-    for (varr = i = 0; i < users.length; i++) {
-        if (login.nameLogin == users[i].loginName) {
-            u = users[i];
-            console.log(u);
-            break;
-        }
-    }
+if (login.isLogin === 1) {
+    var u = users.find((user) => user.loginName === login.nameLogin);
 
-    btnDatHang.addEventListener("click", function () {
-        alert('sc');
-        var productsInBag = document.getElementsByClassName("show_product");
-        var productsInBill = [];
-        for (var i = 0; i < productsInBag.length; i++) {
-            var idPro = productsInBag[i].querySelector('.idProInBag').textContent;
-            var quantityProduct = productsInBag[i].querySelector('.quality_input').value;
-            var currentDate = new Date();
-            // Hàm chuyển đổi ngày thành định dạng "yyyy-mm-dd"
-            function formatDate(date) {
-                return date.toISOString().split('T')[0];
-            }
-            
-            for (var j = 0; j < productFromLocal.length; j++) {
-                if (productFromLocal[j].idProduct == idPro) {
-                    var detail = {
-                        idPro: productFromLocal[j].idProduct,
-                        productName: productFromLocal[j].productName,
-                        picture: productFromLocal[j].imageProduct,
-                        category: productFromLocal[j].category,
-                        pricePro: productFromLocal[j].priceProduct,
-                        quantityPro: quantityProduct,
-                        dateSold: formatDate(currentDate)
-                    }
-                    productsInBill.push(detail);
+    window.addEventListener("load", displayOrdersFromLocalStorage);
+
+    document.getElementById("myCheckbox").onclick = function (e) {
+        if (this.checked) {
+            btnDatHang.addEventListener("click", function () {
+                var productsInBill = [];
+                
+                var currentDate = new Date();
+                // Hàm chuyển đổi ngày thành định dạng "yyyy-mm-dd"
+                function formatDate(date) {
+                    return date.toISOString().split('T')[0];
                 }
-            }
+
+                // Iterate over checked checkboxes
+                var checkedCheckboxes = document.querySelectorAll(
+                    '.show_product input[type="checkbox"]:checked'
+                );
+                checkedCheckboxes.forEach(function (checkbox) {
+                    var productInBag = checkbox.closest(".show_product");
+                    var idPro = productInBag.querySelector(".idProInBag").textContent;
+                    var qualityProduct = productInBag.querySelector(".quality_input").value;
+
+                    var product = productFromLocal.find((p) => p.idProduct === idPro);
+
+                    var productData = {
+                        idPro: product.idProduct,
+                        productName: product.productName,
+                        picture: product.imageProduct,
+                        category: product.category,
+                        pricePro: product.priceProduct,
+                        quantityPro: qualityProduct,
+                        dateSold: formatDate(currentDate)
+                    };
+
+                    productsInBill.push(productData);
+                });
+
+                if (productsInBill.length > 0) {
+                    var newBill = {
+                        idBill: Date.now(),
+                        user: login.nameLogin,
+                        checkByAdmin: 0,
+                        date: currentDate.toLocaleDateString(),
+                        detailBill: productsInBill,
+                        address: u.address,
+                        sdt: u.telephone,
+                    };
+
+                    bills.push(newBill);
+                    localStorage.setItem("bills", JSON.stringify(bills));
+                    updateUIWithNewOrder(newBill);
+                } else {
+                    alert("Please select at least one product to create a bill.");
+                }
+            });
+        } else {
+            // Remove the event listener for "DatHang" button
+            btnDatHang.removeEventListener("click");
         }
-
-        //tạo data để úp lên local
-
-        var Bill = {
-            idBill: Date.now(),
-            user: login.nameLogin,
-            checkByAdmin: 0,
-            date: currentDate.toLocaleDateString(),
-            detailBill: productsInBill,
-            address: u.address,
-            sdt: u.telephone,
-        };
-        bills.push(Bill);
-        localStorage.setItem("bills", JSON.stringify(bills));
-    });
+    };
 
     function updateTotalAmount() {
-        // Move totalAmount declaration outside the loop
-        var totalAmount = 0;
+        var totalAmount = bills.reduce((total, bill) => {
+            return (
+                total +
+                bill.detailBill.reduce((subtotal, product) => {
+                    return subtotal + product.qualityPro * product.pricePro;
+                }, 0)
+            );
+        }, 0);
 
-        for (var i = 0; i < bills.length; i++) {
-            // Tính tổng tiền (đã giả sử bạn đã có biến totalAmount)
-            totalAmount += bills[i].detailBill.reduce((total, product) => {
-                return total + product.quantityPro * product.pricePro;
-            }, 0);
-        }
-
-        // Cập nhật nội dung của phần tử có id là 'money'
-        var moneyElement = document.getElementById("money");
-        moneyElement.textContent = totalAmount + "đ";
+        document.getElementById("money").textContent = totalAmount + "đ";
     }
 
-    // Gọi hàm để cập nhật tổng tiền khi cần thiết
     updateTotalAmount();
 
-    var containerDonhang = document.getElementById("donhang");
-    var donHangCounter = 1; // Biến tăng giá trị duy nhất
+    function updateUIWithNewOrder(newOrder) {
+        var containerDonhang = document.getElementById("donhang");
+        var donHangCounter = containerDonhang.children.length + 1;
 
-    for (var i = 0; i < bills.length; i++) {
         var donHang = document.createElement("div");
         donHang.innerHTML = `
-    <div>
-      <div class="idDonhang" style="display: none;"></div>
-      <a href="#!" class="donhangItem" style="color:red" onclick="showDonHang(this)">Đơn hàng ${donHangCounter++}</a>
-    </div>
-  `;
-        donHang.querySelector(".idDonhang").textContent = bills[i].idBill;
+      <div>
+        <div class="idDonhang" style="display: none;">${newOrder.idBill}</div>
+        <a href="#!" class="donhangItem"  onclick="showDonHang(this)">Đơn hàng ${donHangCounter}</a>
+      </div>
+    `;
+
         containerDonhang.appendChild(donHang);
     }
 
-    var boxDonHang = document.getElementsByClassName("productBag")[0];
+    function displayOrdersFromLocalStorage() {
+        var containerDonhang = document.getElementById("donhang");
 
-    function showDonHang(clickedElement) {
-        // Lấy id của đơn hàng từ phần tử được click
-        var id = clickedElement.parentNode.querySelector(".idDonhang").textContent;
-        for (var i = 0; i < bills.length; i++) {
-            // So sánh id đơn hàng
-            if (bills[i].idBill == id) {
-                // Tạo bill để show đơn hàng
-                var billHTML = document.createElement("div");
-                billHTML.classList.add("containerBillProduct"); // Thêm class cho styling
-                billHTML.innerHTML = `
+        containerDonhang.innerHTML = "";
+        bills.forEach(function (bill) {
+            var donHang = document.createElement("div");
+            donHang.innerHTML = `
         <div>
-        <button class="btnClose" onclick="closeContainer(this)">X</button>
-          <header>
-          <h2>Nội Thất Toàn Cầu</h2>
-          <h3>Đơn hàng</h3>
-          <p class="dateP">Ngày: ${bills[i].date}</p>
-          </header>
-          <p>Tên khách hàng: ${bills[i].user}</p>
-          <p>Địa chỉ: ${bills[i].address}</p>
-          <p>SĐT: ${bills[i].sdt}</p>
-          <p>Ghi chú:</p>
-          <table class="custom-table" cellspacing="0" cellpadding="10px" style="width:100%">
-            <thead>
-              <tr>
-                <th>Tên sản phẩm</th>
-                <th>SL</th>
-                <th>Giá</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-          <p>Tổng tiền: <span id="totalAmount">0</span></p>
+          <div class="idDonhang" style="display: none;">${bill.idBill}</div>
+          <a href="#!" class="donhangItem"  onclick="showDonHang(this)">Đơn hàng ${containerDonhang.children.length + 1
+                }</a>
         </div>
       `;
-
-                var tbody = billHTML.querySelector("tbody");
-
-                // Thêm thông tin sản phẩm vào bảng trong form
-                for (var j = 0; j < bills[i].detailBill.length; j++) {
-                    var productRow = document.createElement("tr");
-                    productRow.innerHTML = `
-              <td>${bills[i].detailBill[j].idPro}</td>
-              <td>${bills[i].detailBill[j].quantityPro}</td>
-              <td>${bills[i].detailBill[j].pricePro}</td>
-            `;
-                    tbody.appendChild(productRow);
-                }
-
-                // Tính tổng tiền và hiển thị
-                var totalAmount = bills[i].detailBill.reduce((total, product) => {
-                    return total + product.quantityPro * product.pricePro;
-                }, 0);
-
-                var totalAmountElement = billHTML.querySelector("#totalAmount");
-                totalAmountElement.textContent = totalAmount;
-                boxDonHang.appendChild(billHTML);
-                break;
-            }
-        }
+            containerDonhang.appendChild(donHang);
+        });
     }
 
-    // Hàm ẩn đi containerBillProduct khi bấm vào btn X
+    var boxDonHang = document.querySelector(".productBag");
+
+    function showDonHang(clickedElement) {
+        var id = clickedElement.parentNode.querySelector(".idDonhang").textContent;
+        var bill = bills.find((b) => b.idBill == id);
+
+        var billHTML = document.createElement("div");
+        billHTML.classList.add("containerBillProduct");
+
+        billHTML.innerHTML = `
+      <div>
+        <button class="btnClose" onclick="closeContainer(this)">X</button>
+        <header>
+          <h2>Nội Thất Toàn Cầu</h2>
+          <h3>Đơn hàng</h3>
+          <p class="dateP">Ngày: ${bill.date}</p>
+        </header>
+        <p>Tên khách hàng: ${bill.user}</p>
+        <p>Địa chỉ: ${bill.address}</p>
+        <p>SĐT: ${bill.sdt}</p>
+        <p>Ghi chú:</p>
+        <table class="custom-table" cellspacing="0" cellpadding="10px" style="width:100%">
+          <thead>
+            <tr>
+              <th>Tên sản phẩm</th>
+              <th>SL</th>
+              <th>Giá</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p>Tổng tiền: <span id="totalAmount">0</span></p>
+      </div>
+    `;
+        var nenDen = document.getElementById("nen-den");
+        nenDen.style =
+            "display: block; z-index: 0; position: fixed; width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.5);";
+
+        var tbody = billHTML.querySelector("tbody");
+
+        bill.detailBill.forEach(function (product) {
+            var productRow = document.createElement("tr");
+            productRow.innerHTML = `
+        <td>${product.idPro}</td>
+        <td>${product.qualityPro}</td>
+        <td>${product.pricePro}</td>
+      `;
+            tbody.appendChild(productRow);
+        });
+
+        var totalAmount = bill.detailBill.reduce((total, product) => {
+            return total + product.qualityPro * product.pricePro;
+        }, 0);
+
+        billHTML.querySelector("#totalAmount").textContent = totalAmount;
+        boxDonHang.appendChild(billHTML);
+    }
+
     function closeContainer(clickedElement) {
-        // Lấy phần tử .containerBillProduct chứa nút đóng X được click
         var containerBillProduct = clickedElement.closest(".containerBillProduct");
         if (containerBillProduct) {
             containerBillProduct.style.display = "none";
+            nenDen.style = "display: block;";
         }
     }
 }
