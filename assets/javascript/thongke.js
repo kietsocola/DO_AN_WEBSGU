@@ -24,8 +24,9 @@ function displayProducts() {
     var bodyTableStatis = document.getElementById("bodyTableStatis");
     bodyTableStatis.innerHTML = "";
 
-    // Sử dụng đối tượng để theo dõi thông tin của từng sản phẩm
+    // Sử dụng đối tượng để theo dõi thông tin của từng sản phẩm và tổng giá tiền
     const productTotals = {};
+    let totalAmount = 0;
 
     Statistique.forEach(order => {
         order.detailBill.forEach(product => {
@@ -38,11 +39,8 @@ function displayProducts() {
                     productTotals[product.productName].quantity += parseInt(product.quantityPro);
                     productTotals[product.productName].totalPrice += product.pricePro * parseInt(product.quantityPro);
 
-                    // Kiểm tra và cập nhật ngày bán mới nhất
-                    const latestDateSold = new Date(productTotals[product.productName].latestDateSold);
-                    if (productDate > latestDateSold) {
-                        productTotals[product.productName].latestDateSold = product.dateSold;
-                    }
+                    // Cập nhật tổng giá tiền
+                    totalAmount += product.pricePro * parseInt(product.quantityPro);
                 } else {
                     // Nếu sản phẩm chưa tồn tại, thêm mới vào danh sách
                     productTotals[product.productName] = {
@@ -51,6 +49,9 @@ function displayProducts() {
                         latestDateSold: product.dateSold,
                         picture: product.picture
                     };
+
+                    // Cập nhật tổng giá tiền
+                    totalAmount += product.pricePro * parseInt(product.quantityPro);
                 }
             }
         });
@@ -68,4 +69,41 @@ function displayProducts() {
             <td>${product.totalPrice}</td>`;
         bodyTableStatis.appendChild(row);
     });
+
+    // Hiển thị tổng giá tiền
+    const totalAmountRow = document.createElement('tr');
+    totalAmountRow.innerHTML = `<td colspan="4"><strong>Tổng giá tiền:</strong></td>
+        <td><strong>${totalAmount}</strong></td>`;
+    bodyTableStatis.appendChild(totalAmountRow);
+}
+
+// Kiểm tra xem localStorage đã có dữ liệu hay chưa
+if (!localStorage.getItem('bills')) {
+    // Thêm dữ liệu vào localStorage nếu chưa có
+    // Tạo một mẫu dữ liệu sản phẩm
+var newProducts = [
+    {
+        productName: "Sản phẩm 1",
+        picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
+        dateSold: "2023-11-25", // Ngày bán
+        quantityPro: 5, // Số lượng
+        pricePro: 20 // Giá
+    },
+    {
+        productName: "Sản phẩm 2",
+        picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+        dateSold: "2023-11-10", // Ngày bán
+        quantityPro: 3, // Số lượng
+        pricePro: 15 // Giá
+    },
+    // Thêm các sản phẩm khác nếu cần
+];
+
+    var existingData = [];
+    existingData.push({
+        date: "2023-11-22", // Ngày đơn hàng
+        detailBill: newProducts
+    });
+
+    localStorage.setItem('bills', JSON.stringify(existingData));
 }
