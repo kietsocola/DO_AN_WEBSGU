@@ -411,3 +411,38 @@ button{
     background: var(--primary-bg-color);
     color: #fff;
 }
+
+/* css phần thống kê */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 4px;
+    justify-content: center;
+}
+
+#filterButton{
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    margin-left: 4px;
+}
+#filterButton:hover{
+    background: var(--my-gradient);
+    color: #fff;
+}
+
+#productType{
+    font-size: 14px;
+    padding: 2px;
+}
+@media screen and (max-width: 750px) {
+    .filters label,
+    .filters input,
+    .filters select,
+    .filters button {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+}
