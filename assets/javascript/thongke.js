@@ -73,7 +73,7 @@ function displayProducts() {
     // Hiển thị tổng giá tiền
     const totalAmountRow = document.createElement('tr');
     totalAmountRow.innerHTML = `<td colspan="4"><strong>Tổng giá tiền:</strong></td>
-        <td><strong>${totalAmount}</strong></td>`;
+        <td style="color: red"><strong>${totalAmount}</strong></td>`;
     bodyTableStatis.appendChild(totalAmountRow);
 }
 
