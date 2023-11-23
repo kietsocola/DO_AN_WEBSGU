@@ -1,0 +1,165 @@
+.txt
+{
+	border:1px solid rgb(108, 134, 114);
+	padding:3px 10px;
+	margin:0;
+	
+	font-family:"segoe ui semilight", "segoe ui", tahoma, arial;
+	font-size:14px;
+}
+
+.btn
+{
+	padding:6px 10px 4px 10px;
+	background-color:rgb(104, 168, 173);
+	border:none;
+	border-bottom:3px solid rgb(104, 168, 173);
+	color:#FFF;
+	
+	-webkit-transition: all 50ms ease-in-out;
+	-moz-transition: all 50ms ease-in-out;
+	-ms-transition: all 50ms ease-in-out;
+	-o-transition: all 50ms ease-in-out;
+	transition: all 50ms ease-in-out;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.btn:hover
+{
+	cursor:pointer;
+	border:none;
+	border-bottom:3px solid rgb(75, 135, 139);
+	
+	-webkit-transition: all 100ms ease-in-out;
+	-moz-transition: all 100ms ease-in-out;
+	-ms-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+}
+
+.btn:active
+{
+	background-color:rgb(85, 152, 157);
+	border-bottom:3px solid rgb(104, 168, 173);
+}
+
+.content
+{
+	overflow:hidden;
+	
+	min-height:350px;
+}
+
+.content-title
+{
+	font-size:18px;
+	font-weight:bold;
+}
+
+.danhsach
+{
+	overflow:hidden;
+	clear:both;
+	
+	outline:1px solid rgb(108, 134, 114);
+}
+
+.danhsach-header
+{
+	overflow:hidden;
+	padding:10px 15px;
+	margin:0px;
+	font-weight:bold;
+	
+	list-style:none;
+	border-bottom:1px solid rgb(108, 134, 114);
+	background-color:rgb(196, 212, 175);
+}
+
+.danhsach-header li, .danhsach-item li, .danhsach-subitem-header li, .danhsach-subitem-item li
+{
+	float:left;
+}
+
+.danhsach-item li img:hover
+{
+	cursor:pointer;
+}
+
+.danhsach-item
+{
+	overflow:hidden;
+	padding:6px 15px;
+	margin:0px;
+	
+	list-style:none;
+	border-bottom:1px solid rgb(108, 134, 114);
+	
+	-webkit-transition: all 100ms ease-in-out;
+	-moz-transition: all 100ms ease-in-out;
+	-ms-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+}
+
+.danhsach-chitiet
+{
+	overflow:hidden;
+}
+
+.danhsach-subitem
+{
+	overflow:hidden;
+	background-color:rgb(196, 212, 175);
+	display:none;
+	
+	-webkit-box-shadow: inset 0px 0px 50px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 50px -5px rgba(0, 0, 0, 0.3);
+}
+
+.danhsach-subitem-header
+{
+	overflow:hidden;
+	padding:6px 15px 6px 15px;
+	margin:0px;
+	font-weight:bold;
+	
+	list-style:none;
+	border-bottom:1px dashed rgb(145, 166, 150);
+}
+
+.danhsach-subitem-item
+{
+	overflow:hidden;
+	padding:4px 15px 4px 15px;
+	margin:0px;
+	
+	list-style:none;
+	border-bottom:1px dashed rgb(145, 166, 150);
+}
+
+.danhsach-item:hover
+{
+	background-color:rgb(196, 212, 175);
+}
+
+/* CSS để ẩn đơn hàng mà không thuộc vào khoảng thời gian đã chọn */
+.danhsach-item {
+    display: none;
+}
+
+.danhsach-subitem {
+	display: none;
+}
+
+/* CSS để hiển thị đơn hàng thuộc vào khoảng thời gian đã chọn */
+.danhsach-item.showOrder {
+    display: block;
+}
+
+.danhsach-subitem.showOrder {
+	display: block;
+}
