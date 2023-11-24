@@ -72,12 +72,35 @@ body {
   z-index: 100;
 }
 
-.total_bill span {
+.yr_bill .total_bill span.view-order {
   font-size: 16px;
   font-weight: bold;
   color: #333;
   text-decoration: underline;
   transition: color 0.3s;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.yr_bill .total_bill .view-order:hover {
+  color: blue;
+}
+
+.yr_bill .total_bill button.close-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #ff4d4d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: none;
+}
+
+.yr_bill .total_bill button.close-button:hover {
+  background-color: #cc0000;
 }
 
 .donhangItem {
@@ -103,7 +126,7 @@ body {
 }
 
 .donhangItem:hover::after {
-  color: blue; /* Change the color on hover if needed */
+  color: blue;
 }
 
 @media screen and (max-width: 600px) {
