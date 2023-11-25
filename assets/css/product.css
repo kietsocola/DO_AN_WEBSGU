@@ -268,7 +268,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     .content_package
     .shipping_method
     span {
-    font-size: 6px;
+    font-size: 7px;
   }
   body
     .shopBag
@@ -278,7 +278,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     .content_package
     .name_product
     .a_name_product {
-    font-size: 6px;
+    font-size: 7px;
   }
   body
     .shopBag
@@ -318,7 +318,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     font-size: 8px;
   }
   body .shopBag .productBag .show_product .yr_product .decide_checkProduct {
-    width: 40%;
+    width: 45%;
   }
   body .shopBag .productBag .show_product .yr_product {
     padding: 20px 10px;
@@ -347,7 +347,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     .content_package
     .name_product
     .a_name_product {
-    font-size: 7px;
+    font-size: 9px;
     font-weight: 600;
   }
 
@@ -359,12 +359,13 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     .p_price_product {
     font-size: 13px;
   }
+
   body .shopBag .productBag .show_product .yr_product .price_product span {
     font-size: 9px;
   }
   body .shopBag .productBag .show_product .yr_product .price_product {
     margin: 10px 70px 0 10px;
-    width: 30%;
+    width: 25%;
     margin: 0;
   }
   body .shopBag .productBag .show_product .yr_product .decideBag {
@@ -447,7 +448,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     /* position: fixed;
     z-index: 1000;
     bottom: 0;
-    left: 40px; */
+    left: 0px; */
   }
   body .shopBag .yr_total .yr_bill {
     display: flex;

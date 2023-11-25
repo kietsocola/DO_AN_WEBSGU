@@ -54,6 +54,7 @@ if (login.isLogin === 1) {
           bills.push(newBill);
           localStorage.setItem("bills", JSON.stringify(bills));
           updateUIWithNewOrder(newBill);
+          alert("Bạn đặt hàng thàng công");
         } else {
           alert("Please select at least one product to create a bill.");
         }
@@ -79,8 +80,9 @@ if (login.isLogin === 1) {
 
   updateTotalAmount();
 
+  var containerDonhang = document.getElementById("donhang");
+
   function updateUIWithNewOrder(newOrder) {
-    var containerDonhang = document.getElementById("donhang");
     var donHangCounter = containerDonhang.children.length + 1;
 
     var donHang = document.createElement("div");
@@ -95,8 +97,6 @@ if (login.isLogin === 1) {
   }
 
   function displayOrdersFromLocalStorage() {
-    var containerDonhang = document.getElementById("donhang");
-
     containerDonhang.innerHTML = "";
     bills.forEach(function (bill) {
       var donHang = document.createElement("div");
@@ -111,7 +111,19 @@ if (login.isLogin === 1) {
       containerDonhang.appendChild(donHang);
     });
   }
+  containerDonhang.style.display = "none";
+  var close_button = document.getElementsByClassName("close-button")[0];
 
+  function review_bill() {
+    containerDonhang.style.display =
+      containerDonhang.style.display === "none" ? "block" : "none";
+    close_button.style.display =
+      close_button.style.display === "block" ? "none" : "block";
+  }
+  function closeOrderView() {
+    containerDonhang.style.display = "none";
+    close_button.style.display = "none";
+  }
   var boxDonHang = document.querySelector(".productBag");
 
   function showDonHang(clickedElement) {
