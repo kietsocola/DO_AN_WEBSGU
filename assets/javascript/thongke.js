@@ -68,7 +68,7 @@ function displayProducts() {
             <td><img src="${product.picture}" width="80" alt="Hình ảnh sản phẩm"></td>
             <td>${formatDate(new Date(product.latestDateSold))}</td>
             <td>${product.quantity}</td>
-            <td>${product.totalPrice}</td>`;
+            <td>${product.totalPrice} đ</td>`;
         bodyTableStatis.appendChild(row);
     });
 
@@ -76,7 +76,38 @@ function displayProducts() {
     const totalAmountRow = document.createElement('tr');
     totalAmountRow.innerHTML = `<td colspan="3"><strong>Tổng:</strong></td>
         <td style="color: red"><strong>${totalQuantity}</strong></td>
-        <td style="color: red"><strong>${totalAmount}</strong></td>`;
+        <td style="color: red"><strong>${totalAmount} đ</strong></td>`;
     bodyTableStatis.appendChild(totalAmountRow);
+}
+
+// Kiểm tra xem localStorage đã có dữ liệu hay chưa
+if (!localStorage.getItem('bills')) {
+    // Thêm dữ liệu vào localStorage nếu chưa có
+    // Tạo một mẫu dữ liệu sản phẩm
+    var newProducts = [
+        {
+            productName: "Sản phẩm 1",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
+            dateSold: "2023-11-25", 
+            qualityPro: 5,
+            pricePro: 20
+        },
+        {
+            productName: "Sản phẩm 2",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-10", 
+            qualityPro: 3, 
+            pricePro: 15 
+        },
+        // Thêm các sản phẩm khác nếu cần
+    ];
+
+    var existingData = [];
+    existingData.push({
+        date: "2023-11-22",
+        detailBill: newProducts
+    });
+
+    localStorage.setItem('bills', JSON.stringify(existingData));
 }
 
