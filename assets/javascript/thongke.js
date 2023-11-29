@@ -8,7 +8,6 @@ function formatDate(date) {
 
 // Bắt sự kiện click của nút "Thống kê"
 document.getElementById('filterButton').addEventListener('click', function () {
-    // Gọi hàm thực hiện việc lọc và hiển thị sản phẩm
     displayProducts();
 });
 
@@ -42,6 +41,7 @@ function displayProducts() {
 
                     // Cập nhật tổng giá tiền
                     totalAmount += product.pricePro * parseInt(product.qualityPro);
+                    totalQuantity += parseInt(product.qualityPro);
                 } else {
                     // Nếu sản phẩm chưa tồn tại, thêm mới vào danh sách
                     productTotals[product.productName] = {
@@ -89,6 +89,7 @@ if (!localStorage.getItem('bills')) {
             productName: "Sản phẩm 1",
             picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
             dateSold: "2023-11-25", 
+            category: 'phong_khach',
             qualityPro: 5,
             pricePro: 20
         },
@@ -96,6 +97,15 @@ if (!localStorage.getItem('bills')) {
             productName: "Sản phẩm 2",
             picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
             dateSold: "2023-11-10", 
+            category: 'phong_ngu',
+            qualityPro: 3, 
+            pricePro: 15 
+        },
+        {
+            productName: "Sản phẩm 2",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-20", 
+            category: 'phong_ngu',
             qualityPro: 3, 
             pricePro: 15 
         },
