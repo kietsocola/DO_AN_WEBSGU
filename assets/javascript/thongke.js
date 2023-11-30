@@ -114,6 +114,8 @@ if (!localStorage.getItem('bills')) {
 
     var existingData = [];
     existingData.push({
+        idBill: "001",
+        user: "admin",
         date: "2023-11-22",
         detailBill: newProducts
     });
